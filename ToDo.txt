@@ -1,0 +1,15 @@
+Goal: Create a real life usage specific project using AI agents before december ends
+
+--------------------ToDo--------------------
+
+Watch these tutorials
+https://www.youtube.com/watch?v=uo-vCFL96yQ | 1 min DONE
+
+https://www.youtube.com/watch?v=uUqKPQVkovk | 12 min DONE
+
+https://www.youtube.com/watch?v=S_YlJVLU3EM | 43 min
+
+https://www.youtube.com/watch?v=vF2Z4T97xcQ | 1h 9 min
+
+--------------------DONE--------------------
+
