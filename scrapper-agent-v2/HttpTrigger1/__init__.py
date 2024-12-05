@@ -3,10 +3,11 @@ from scrape_articles import scrape_articles
 
 import azure.functions as func
 
-articles = scrape_articles
-
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
+
+    #Execute the article scraper from the function
+    articles = scrape_articles()
 
     name = req.params.get('name')
     if not name:
