@@ -1,6 +1,10 @@
 import requests
 import logging
 from bs4 import BeautifulSoup
+import json
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 def scrape_articles():
     # Base URL of the website
@@ -16,11 +20,8 @@ def scrape_articles():
     # Find all article containers
     articles = soup.find_all('a', href=True)  # Anchor tags with href attributes
 
-    logging.info('\Logging article titles, URLs, and content...\n')
-    print('\nPrinting article titles, URLs, and content...\n')
-
-    # Initialize a string to collect all printed content
-    all_content = ""
+    # Initialize a list to collect article data
+    articles_data = []
 
     for article in articles:
         # Check if the article contains a div with the class 'item-title'
@@ -33,15 +34,12 @@ def scrape_articles():
             relative_url = article['href']
             full_url = f"{base_url}{relative_url}"  # Append base URL to relative URL
             
-            # Prepare the content to print
-            article_info = f"ARTICLE TITLE: {title}\nARTICLE URL: {full_url}\n"
-            
-            # Print the title and full URL
-            logging.info(article_info)
-            print(article_info)
-            
-            # Add to the all_content string
-            all_content += article_info
+            # Initialize the article dictionary
+            article_dict = {
+                "title": title,
+                "url": full_url,
+                "content": None
+            }
             
             # Send a GET request to the article URL
             article_response = requests.get(full_url)
@@ -51,25 +49,22 @@ def scrape_articles():
             body_div = article_soup.find('div', class_='wysiwyg')
             if body_div:
                 body_content = body_div.get_text(separator="\n", strip=True)  # Get text with line breaks
-                content_info = f"ARTICLE CONTENT:\n{body_content}\n"
-                logging.info(content_info)
-                print(content_info)
-                all_content += content_info
+                article_dict["content"] = body_content
             else:
-                no_content_message = "Content not found.\n"
-                logging.info(no_content_message)
-                print(no_content_message)
-                all_content += no_content_message
+                article_dict["content"] = "Content not found."
             
-            separator = "\n" + "-" * 80 + "\n"
-            logging.info(separator)
-            print(separator)
-            all_content += separator
+            # Append the article data to the list
+            articles_data.append(article_dict)
 
-    return all_content
+    # Return the list of articles as JSON
+    return json.dumps(articles_data, ensure_ascii=False, indent=4)
 
-# Call the function and store the returned content
-articles_content = scrape_articles()
-# Print the full content if needed
-logging.info(articles_content)
-print(articles_content)
+# Call the function and save the JSON content
+articles_json = scrape_articles()
+
+# Save the JSON to a file
+with open("articles.json", "w", encoding="utf-8") as json_file:
+    json_file.write(articles_json)
+
+# Print the JSON content to the console
+print(articles_json)

@@ -16,7 +16,7 @@ def scrape_articles():
     # Find all article containers
     articles = soup.find_all('a', href=True)  # Anchor tags with href attributes
 
-    logging.info('\Logging article titles, URLs, and content...\n')
+    #logging.info('\Logging article titles, URLs, and content...\n')
     print('\nPrinting article titles, URLs, and content...\n')
 
     # Initialize a string to collect all printed content
@@ -37,7 +37,7 @@ def scrape_articles():
             article_info = f"ARTICLE TITLE: {title}\nARTICLE URL: {full_url}\n"
             
             # Print the title and full URL
-            logging.info(article_info)
+            #logging.info(article_info)
             print(article_info)
             
             # Add to the all_content string
@@ -52,17 +52,17 @@ def scrape_articles():
             if body_div:
                 body_content = body_div.get_text(separator="\n", strip=True)  # Get text with line breaks
                 content_info = f"ARTICLE CONTENT:\n{body_content}\n"
-                logging.info(content_info)
+                #logging.info(content_info)
                 print(content_info)
                 all_content += content_info
             else:
                 no_content_message = "Content not found.\n"
-                logging.info(no_content_message)
+                #logging.info(no_content_message)
                 print(no_content_message)
                 all_content += no_content_message
             
             separator = "\n" + "-" * 80 + "\n"
-            logging.info(separator)
+            #logging.info(separator)
             print(separator)
             all_content += separator
 
@@ -71,5 +71,5 @@ def scrape_articles():
 # Call the function and store the returned content
 articles_content = scrape_articles()
 # Print the full content if needed
-logging.info(articles_content)
+#logging.info(articles_content)
 print(articles_content)
