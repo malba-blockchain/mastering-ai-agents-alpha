@@ -46,7 +46,7 @@ def scrape_articles():
             article_soup = BeautifulSoup(article_response.content, 'html.parser')
             
             # Extract the body content (assumes articles are wrapped in a specific class like 'wysiwyg')
-            body_div = article_soup.find('div', class_='wysiwyg')
+            body_div = article_soup.find('div', class_='article-right')
             if body_div:
                 body_content = body_div.get_text(separator="\n", strip=True)  # Get text with line breaks
                 article_dict["content"] = body_content
