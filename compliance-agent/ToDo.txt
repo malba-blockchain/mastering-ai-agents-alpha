@@ -1,0 +1,82 @@
+---------------------DONE---------------------}
+
+Create agent initial description DONE
+
+
+---------------------ToDo---------------------
+
+Add static data source
+
+Figure out how to add dynamic data source | Modify access to everyone can view.
+
+Create demo questions
+
+
+1098771877
+
+15426661
+
+53036320
+
+64568692
+
+1010243104
+
+1127953640
+
+1012398444
+---
+784778
+
+79853957
+
+13508025
+
+409589
+
+1001154696
+
+80242734
+
+88238753
+
+1037651757
+
+5143485546
+
+-----TALKING POINTS-----
+
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgent/canvas?__version__=2&enableFileAttachment=false
+
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgent/canvas?__version__=2&enableFileAttachment=false
+
+Proper names in english
+
+City and first Observations field.
+
+
+---
+
+What's the last review date?
+
+What's the oldest review date?
+
+Whats the first record you can find?
+
+How many records does the matriz compliance have?
+
+How many alerts are there in the matriz compliance document?
+
+How many observations are there in the matriz compliance document?
+
+List all the IDs that have a review date from March 2024
+
+Create an email to Maria Fernanda asking to check again all the IDs that have the review date from February 2024, MAKE SURE TO LIST ALL THE IDs that have the review date from February 2024.
+
+Create an email to Maria Fernanda asking to check again all the IDs that have US as country, MAKE SURE TO LIST ALL THE IDs that have US as country.
+
+Show me the details of all the IDs that have observations associated. ALL OF THEM. There are 8 of them, FIND THEM.
+
+List all the IDs that are from the country VE. There are 20 of them. FIND THEM ALL. 20 of them.
+
+Show me the details of all the IDs that are from the country VE. There are 70 of them. FIND THEM ALL. 70 of them. (Actually 70 of them)
