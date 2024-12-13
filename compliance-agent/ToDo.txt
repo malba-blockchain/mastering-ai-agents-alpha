@@ -1,4 +1,4 @@
----------------------DONE---------------------}
+---------------------DONE---------------------
 
 Create agent initial description DONE
 
@@ -19,40 +19,58 @@ Create demo questions
 53036320
 
 64568692
-
-1010243104
-
-1127953640
-
-1012398444
 ---
-784778
 
-79853957
+784778
 
 13508025
 
-409589
-
-1001154696
-
 80242734
 
-88238753
+------
 
-1037651757
+1010243105
 
-5143485546
+49725901
+
+1010243104
+
+13659742
+
 
 -----TALKING POINTS-----
 
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgent/canvas?__version__=2&enableFileAttachment=false
+https://shorturl.at/hLiQP v1
 
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgent/canvas?__version__=2&enableFileAttachment=false
+https://tinyurl.com/compliance-agent-v2
 
-Proper names in english
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV2/canvas?__version__=2&enableFileAttachment=false
 
-City and first Observations field.
+1. Pruebas
+
+2. Semana de testeo y apuntar hallazgos
+
+Log de errores y comentarios
+https://docs.google.com/document/d/1PLXdQHQuJB9E_N-T6al9X7jctDvV1OD4zng7bCwMhdo/edit?usp=sharing
+
+3. Mejoras base de datos Nacionalidad. Fecha revisión en listas. Alertas.
+
+
+FEEDBACK
+
+1. Hacerlo en español.  DONE
+
+-Si aparece registro de alerta decirle que no le pague. DONE
+
+2. Dejar el numero de telefono de helen para que redirija al WA de ella. 
+
+3. Que no se vea la matríz de referencia.
+
+-------------------------------------------------------------------
+
+4. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+ 
+Clean nacionalidad and Fecha de revisión en listas format
 
 
 ---
@@ -80,3 +98,40 @@ Show me the details of all the IDs that have observations associated. ALL OF THE
 List all the IDs that are from the country VE. There are 20 of them. FIND THEM ALL. 20 of them.
 
 Show me the details of all the IDs that are from the country VE. There are 70 of them. FIND THEM ALL. 70 of them. (Actually 70 of them)
+
+
+------------Compliance Agent V2------------
+
+1. Get UNIR sharepoint links
+
+-Folder
+--Edit: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw?e=yHPYgD
+--View: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoB5fRQyoYETlHJvZ9mzHCUJQ?e=l17FBi
+--Restricted view: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBYAjGMKx_tSSIUI9sPFnzPA?e=5P6muq
+
+-Document
+--Edit: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtAB0r0MZAQR3BjKD75xZmZ0bA?e=jZcx8U
+--View: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtAB0wlUJMOyTYkLBAhNIV5ADA?e=UwVCX0
+--Restricted view: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtABdIjYTzLTvrDkhcdrZrbGCw?e=hda2zS
+
+2. Get OneDrive links
+
+-Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B?e=USFrQB
+-View: https://1drv.ms/x/s!AqTjxNY0ObBAjFjDW9jBjAwFTATr?e=duVHSs
+
+3. Create table copy using powerapps
+
+Compliance Database App
+Person Record
+
+4. Add manually via the copilot studio interface
+
+-Folder
+-Document
+
+
+https://www.youtube.com/watch?v=DxnZcgn6OIU
+
+https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw
+
+
