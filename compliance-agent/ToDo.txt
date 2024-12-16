@@ -56,24 +56,16 @@ https://docs.google.com/document/d/1PLXdQHQuJB9E_N-T6al9X7jctDvV1OD4zng7bCwMhdo/
 3. Mejoras base de datos Nacionalidad. Fecha revisión en listas. Alertas.
 
 
-FEEDBACK
+ToDo v2
 
 1. Hacerlo en español.  DONE
 
 -Si aparece registro de alerta decirle que no le pague. DONE
 
-2. Dejar el numero de telefono de helen para que redirija al WA de ella. 
+2. Dejar el numero de telefono de helen para que redirija al WA de ella. DONE
 
-3. Que no se vea la matríz de referencia.
 
 -------------------------------------------------------------------
-
-4. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
- 
-Clean nacionalidad and Fecha de revisión en listas format
-
-
----
 
 What's the last review date?
 
@@ -100,7 +92,31 @@ List all the IDs that are from the country VE. There are 20 of them. FIND THEM A
 Show me the details of all the IDs that are from the country VE. There are 70 of them. FIND THEM ALL. 70 of them. (Actually 70 of them)
 
 
-------------Compliance Agent V2------------
+------------Compliance Agent V3------------
+
+
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV3/canvas?__version__=2&enableFileAttachment=true
+
+1. Ingresar versión actualizada DONE
+
+
+2. Que no se vea la matríz de referencia.
+
+Find out how to execute a simple formula Topic.Answer, ": cite:1 ""Citation-1""", "")
+
+https://www.youtube.com/watch?v=X0GohdAIuJQ
+
+https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469
+
+
+3. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+ 
+Clean nacionalidad and Fecha de revisión en listas format
+
+
+4. Post on whatsapp.
+
+
 
 1. Get UNIR sharepoint links
 
@@ -135,3 +151,40 @@ https://www.youtube.com/watch?v=DxnZcgn6OIU
 https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw
 
 
+--------------------------------
+
+
+Topic.Answer
+
+Substitute(Substitute(Substitute(Substitute(Topic.genRes.Text.Content, "[1]" , ""), "[2]",""),"[3]",""),"[4]","")
+
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Topic.Answer, "[1]", ""), "[2]", ""), "[3]", "")
+
+Trim(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(Topic.Answer, ": cite:1 ""Citation-1""", ""),
+ ": cite:2 ""Citation-2""", ""),
+ ": cite:3 ""Citation-3""", ""),
+ "[1]", ""),
+ "[2]", ""),
+ "[3]", "")
+)
+
+
+Trim(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(
+ Substitute(Topic.Answer, ": cite:1 ""Citation-1""", ""),
+ ": cite:2 ""Citation-2""", ""),
+ ": cite:3 ""Citation-3""", ""),
+ "[1]", ""),
+ "[2]", ""),
+ "[3]", "")
+)
