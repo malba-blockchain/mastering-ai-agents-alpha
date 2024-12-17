@@ -94,19 +94,27 @@ Show me the details of all the IDs that are from the country VE. There are 70 of
 
 ------------Compliance Agent V3------------
 
-
 https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV3/canvas?__version__=2&enableFileAttachment=true
 
 1. Ingresar versión actualizada DONE
 
 
+
 2. Que no se vea la matríz de referencia.
+
+1065569528
 
 Find out how to execute a simple formula Topic.Answer, ": cite:1 ""Citation-1""", "")
 
-https://www.youtube.com/watch?v=X0GohdAIuJQ
+Substitute(Topic.Answer, "Documento", "XXXXXXXX")
 
-https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469
+Split(Topic.Answer, ":")
+
+https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469 FOLLOW THIS ANSWER AGAIN
+
+https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview PDF ONLINE
+
+https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-template-topics? PDF ONLINE
 
 
 3. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
