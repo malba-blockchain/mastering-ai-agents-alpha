@@ -104,80 +104,17 @@ https://community.powerplatform.com/forums/thread/details/?threadid=ae7941a4-9fb
 
 
 
-2. Que no se vea la matríz de referencia.
+2. Que no se vea la matríz de referencia DONE
 
 1023900521
 86048170
 1010243104
 
-CONTINUE WITH THE CHATGPT TUTORIAL AGAIN FROM SCRATCH IN THE NODE. UNIR CHATGPT ACCOUNT.
-
-
-Concat(Global.GENRESPONSE.Text.CitationSources, 
-       "{ Name: " & Name & ", Text: " & Text & "},")
-
-Find out how to execute a simple formula
-
-Global.GENRESPONSE (record)
-Global.GENRESPONSE.Speech (record)
-Global.GENRESPONSE.Speech.CitationSources (table)
-Global.GENRESPONSE.Speech.Content (string)
-Global.GENRESPONSE.Text (record)
-Global.GENRESPONSE.Text.CitationSources (table)
-Global.GENRESPONSE.Text.Content (string)
-Global.GENRESPONSE.Text.MarkdownContent (string)
-
-
-
-
-Trim(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(Topic.Answer, ": cite:1 ""Citation-1""", ""),
- ": cite:2 ""Citation-2""", ""),
- ": cite:3 ""Citation-3""", ""),
- "[1]", ""),
- "[2]", ""),
- "[3]", "")
-)
-
-Trim(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(Topic.Answer, ": referencia:1 ""Referencia-1""", ""),
- ": referencia:2 ""Referencia-2""", ""),
- ": referencia:3 ""Referencia-3""", ""),
- "[1]", ""),
- "[2]", ""),
- "[3]", "")
-)
-
-Trim(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(Topic.Answer, ": reference:1 ""Reference-1""", ""),
- ": reference:2 ""Reference-2""", ""),
- ": reference:3 ""Reference-3""", ""),
- "[1]", ""),
- "[2]", ""),
- "[3]", "")
-)
-
-
-Substitute(Topic.Answer, "Documento", "XXXXXXXX")
-
 Split(Topic.Answer, ":")
 
 https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469 FOLLOW THIS ANSWER AGAIN
+
+https://community.powerplatform.com/?redirectedFrom=https://community.powerplatform.com/t5/Building-Copilot-Studio-Chatbots/Citations-references-not-showing-in-the-chat-in-Teams-but/m-p/2476238/highlight/true#M1513
 
 https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview PDF ONLINE
 
@@ -185,7 +122,6 @@ https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-template-to
 
 
 3. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
-
 
 4. Post on whatsapp.
 
@@ -227,38 +163,3 @@ https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBk
 
 
 --------------------------------
-
-Topic.Answer
-
-Substitute(Substitute(Substitute(Substitute(Topic.genRes.Text.Content, "[1]" , ""), "[2]",""),"[3]",""),"[4]","")
-
-SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Topic.Answer, "[1]", ""), "[2]", ""), "[3]", "")
-
-Trim(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(Topic.Answer, ": cite:1 ""Citation-1""", ""),
- ": cite:2 ""Citation-2""", ""),
- ": cite:3 ""Citation-3""", ""),
- "[1]", ""),
- "[2]", ""),
- "[3]", "")
-)
-
-
-Trim(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(
- Substitute(Topic.Answer, ": cite:1 ""Citation-1""", ""),
- ": cite:2 ""Citation-2""", ""),
- ": cite:3 ""Citation-3""", ""),
- "[1]", ""),
- "[2]", ""),
- "[3]", "")
-)
