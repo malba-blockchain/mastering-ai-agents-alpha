@@ -1,0 +1,10 @@
+https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview
+
+https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-template-topics
+
+https://community.powerplatform.com/forums/thread/details/?threadid=4b807299-1bd5-4e91-8a17-b22491700685
+
+https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469
+
+https://community.powerplatform.com/?redirectedFrom=https://community.powerplatform.com/t5/Building-Copilot-Studio-Chatbots/Citations-references-not-showing-in-the-chat-in-Teams-but/m-p/2476238/highlight/true#M1513
+

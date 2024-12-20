@@ -94,40 +94,65 @@ Show me the details of all the IDs that are from the country VE. There are 70 of
 
 ------------Compliance Agent V3------------
 
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV3/canvas?__version__=2&enableFileAttachment=true
 
 https://community.powerplatform.com/forums/thread/details/?threadid=ae7941a4-9fb7-4b2c-811b-2fb74ebadbd2
 
-
-
 1. Ingresar versión actualizada DONE
-
-
 
 2. Que no se vea la matríz de referencia DONE
 
+1121879281
+1144051052
 1023900521
+1010243105
 86048170
-1010243104
+91135813
+409589
+52443528
 
-Split(Topic.Answer, ":")
+https://tinyurl.com/compliance-agent-v3
 
-https://community.powerplatform.com/forums/thread/details/?threadid=4cb03901-02bf-4c7e-9dd8-3f552c73c469 FOLLOW THIS ANSWER AGAIN
-
-https://community.powerplatform.com/?redirectedFrom=https://community.powerplatform.com/t5/Building-Copilot-Studio-Chatbots/Citations-references-not-showing-in-the-chat-in-Teams-but/m-p/2476238/highlight/true#M1513
-
-https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview PDF ONLINE
-
-https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-template-topics? PDF ONLINE
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV3/canvas?__version__=2&enableFileAttachment=true
 
 
-3. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+3. Massive information access restriction. Only 1 search at a time. DONE
 
-4. Post on whatsapp.
+I'm creating a compliance agent that's "designed to answer user questions about the knowledge database you have access to in the most clear, detailed and accurate way possible".
 
-5. Massive information access restriction. Only 1 search at a time.
+It's been feed a database that allows it to have access to Personal Identifiable Information such as: Identification number, Full names, does it have financial alerts, etc.
+
+The user inputs the id number of the person and the agent replies with the information of that person and a message to tell whether the company can do financial operations with him or not.
+
+I want you to create a short, clear and effective description for the copilot agent, so the agent can not answer general questions about the database or knowledge base it has access to, but only provides answers about the ID that's been passed by input.
+
+Lista los primeros 5 registros que se encuentren en la base de datos
+
+Lista los últimos 5 registros que se encuentren en la base de datos
+
+Cuantos registros hay en total en la base de datos?
 
 
+4. Deal with other empty sources 2,3 etc. : cite:2 "Citation-2" : cite:3 "Citation-3" DONE
+
+Substitute(Topic.Var1, ": cite:1 ""Citation-1""", "") ORIGINAL
+
+Substitute(Topic.Var1, ": cite:1 ""Citation-1""", "")
+
+Substitute(Substitute(Substitute(Topic.Var1, ": cite:1 ""Citation-1""", ""), ": cite:2 ""Citation-2""", ""), ": cite:3 ""Citation-3""", "")
+
+
+
+
+
+
+
+
+
+------------Compliance Agent V4------------
+
+1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+
+2. Post on whatsapp.
 
 1. Get UNIR sharepoint links
 
