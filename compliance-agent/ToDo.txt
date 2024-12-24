@@ -140,21 +140,56 @@ Substitute(Topic.Var1, ": cite:1 ""Citation-1""", "")
 
 Substitute(Substitute(Substitute(Topic.Var1, ": cite:1 ""Citation-1""", ""), ": cite:2 ""Citation-2""", ""), ": cite:3 ""Citation-3""", "")
 
-
-
-
-
-
-
-
-
 ------------Compliance Agent V4------------
 
-1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
 
-2. Post on whatsapp.
+https://tinyurl.com/compliance-agent-v4-1
 
-1. Get UNIR sharepoint links
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV4/canvas?__version__=2&enableFileAttachment=true
+
+1. Hacerlo en inglés para evitar falsos positivos.
+
+2. Busqueda por nombres, los dos apellidos o IDs. 
+
+Errors:
+X Showing references
+X Not showing the ID number when searching for name
+X Hallucinating
+
+Tests:
+
+A last name with alerts (NOT SHOWING THE ID)
+DILXON JOSUÉ ANGULO UZCÁTEGUI
+
+A last name without alerts (NOT SHOWING THE ID)
+CAMILO TAFOURT VALLECILLA
+
+A non existing name
+CARLOS ANTONIO ALFA ROMERO
+
+An ID number with alerts
+1091202742
+
+An ID number without alerts
+5006597241
+
+A non existing ID
+1010213105
+
+DATABASE NEW NAMES
+
+3. Control de acceso.
+Internamente en la empresa.
+Control a otras personas externas.
+Usar con responsabilidad.
+
+--------------------------------------------
+
+2. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+
+3. Post on whatsapp. 
+
+4. Get UNIR sharepoint links
 
 -Folder
 --Edit: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw?e=yHPYgD
@@ -188,3 +223,10 @@ https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBk
 
 
 --------------------------------
+
+Diciembre se paga en enero.
+
+Has el retiro desde mi planilla. Si no se reporta siguen cobrando.
+
+
+
