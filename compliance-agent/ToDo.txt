@@ -161,8 +161,14 @@ Tests:
 A last name with alerts (NOT SHOWING THE ID)
 DILXON JOSUÉ ANGULO UZCÁTEGUI
 
-A last name without alerts (NOT SHOWING THE ID)
+A last name without alerts (NOT GIVING THE ID)
 CAMILO TAFOURT VALLECILLA
+
+MANTILLA MARTINEZ
+
+ALVAREZ LOZANO
+
+QUIÑONES SOSA
 
 A non existing name
 CARLOS ANTONIO ALFA ROMERO
@@ -174,7 +180,11 @@ An ID number without alerts
 5006597241
 
 A non existing ID
-1010213105
+1010213129
+1088543742
+
+Asking for ID Numnber
+Whats the ID Number of TAFOURT VALLECILLA?
 
 DATABASE NEW NAMES
 
@@ -182,6 +192,18 @@ DATABASE NEW NAMES
 Internamente en la empresa.
 Control a otras personas externas.
 Usar con responsabilidad.
+
+
+------------Compliance Agent V4.2------------
+
+1. Create an agent that searches only by last name DONE
+
+2. Modify that agent to allow to select search by name and search by ID Number DONE
+
+3. It only replies with the format assigned DONE
+
+4. FIX IT TO NOT SHOW THE FALSE NEGATIVES ITS CURRENTLY SHOWING WITH ID Numbers
+
 
 --------------------------------------------
 
@@ -223,10 +245,5 @@ https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBk
 
 
 --------------------------------
-
-Diciembre se paga en enero.
-
-Has el retiro desde mi planilla. Si no se reporta siguen cobrando.
-
 
 
