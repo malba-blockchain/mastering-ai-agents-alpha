@@ -217,6 +217,12 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 
 4. FIX IT TO NOT SHOW THE FALSE NEGATIVES ITS CURRENTLY SHOWING WITH ID Numbers DONE
 
+5. Make the search by ID Number work
+-Update the instructions in topic
+-Turn the ID Number type intro number type instead of string
+-Change overview description
+
+
 --------------------------------------------
 
 2. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
