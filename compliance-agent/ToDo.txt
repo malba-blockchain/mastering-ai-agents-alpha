@@ -171,19 +171,27 @@ ALVAREZ LOZANO
 QUIÑONES SOSA
 
 A non existing name
-CARLOS ANTONIO ALFA ROMERO
+CARLOS ANTONIO NARIÑO ROMERO
 
 An ID number with alerts
+1152706243
+1121890450
+21234342
+1065375579
 1091202742
 
 An ID number without alerts
-5006597241
+1022325523
+1042968966
+1072716298
+1051823824
 
 A non existing ID
+5006597241
 1010213129
 1088543742
 
-Asking for ID Numnber
+Asking for ID Number
 Whats the ID Number of TAFOURT VALLECILLA?
 
 DATABASE NEW NAMES
@@ -193,8 +201,13 @@ Internamente en la empresa.
 Control a otras personas externas.
 Usar con responsabilidad.
 
-
 ------------Compliance Agent V4.2------------
+
+Eliminated security concerns. Eliminated hallucinations for a price. DONE
+
+https://tinyurl.com/compliance-agent-v4-2
+
+https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV42/canvas?__version__=2&enableFileAttachment=true
 
 1. Create an agent that searches only by last name DONE
 
@@ -202,8 +215,7 @@ Usar con responsabilidad.
 
 3. It only replies with the format assigned DONE
 
-4. FIX IT TO NOT SHOW THE FALSE NEGATIVES ITS CURRENTLY SHOWING WITH ID Numbers
-
+4. FIX IT TO NOT SHOW THE FALSE NEGATIVES ITS CURRENTLY SHOWING WITH ID Numbers DONE
 
 --------------------------------------------
 
