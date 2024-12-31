@@ -230,6 +230,12 @@ TRIBALDO PEREZ
 
 https://account.microsoft.com/ Loging with the gmail accocunt
 
+https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products#
+
+https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio?msockid=36f3daf860cd6361087fce0761676214
+
+https://signup.microsoft.com/get-started/signup?products=25a8ddb8-34ca-4a93-828d-95a68d02e3a9&mproducts=CFQ7TTC0LH1F:000P&fmproducts=CFQ7TTC0LH1F:000P&culture=en-us&country=us&ali=1
+
 Its possible to get it working under 7 minutes.
 Save the excel
 Hit sync
