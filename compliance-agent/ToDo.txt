@@ -171,7 +171,7 @@ ALVAREZ LOZANO
 QUIÑONES SOSA
 
 A non existing name
-CARLOS ANTONIO NARIÑO ROMERO
+CARLOS ANTONIO OZIMANDIAS ROMERO
 
 An ID number with alerts
 1152706243
@@ -222,10 +222,27 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 -Turn the ID Number type intro number type instead of string
 -Change overview description
 
+------------Compliance Agent V5------------
 
---------------------------------------------
+1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
 
-2. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+TRIBALDO PEREZ
+
+https://account.microsoft.com/ Loging with the gmail accocunt
+
+Its possible to get it working under 7 minutes.
+Save the excel
+Hit sync
+Hit publish 3 times
+
+Try to get the file using the sharepoint connector (does it update faster?)
+Make it update and reflect changes on answers
+Fix date format
+Add topic logic 
+Eliminate references
+
+
+------------------------------------------------------------------------------------
 
 3. Post on whatsapp. 
 
