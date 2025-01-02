@@ -228,18 +228,17 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 
 TRIBALDO PEREZ
 
-https://account.microsoft.com/ Loging with the gmail accocunt
+ARENAS SANTANA
 
-https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products#
+MATERANO RODRIGUEZ
 
-https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio?msockid=36f3daf860cd6361087fce0761676214
-
-https://signup.microsoft.com/get-started/signup?products=25a8ddb8-34ca-4a93-828d-95a68d02e3a9&mproducts=CFQ7TTC0LH1F:000P&fmproducts=CFQ7TTC0LH1F:000P&culture=en-us&country=us&ali=1
+Check saving the excel using gmail external account
 
 Its possible to get it working under 7 minutes.
-Save the excel
-Hit sync
-Hit publish 3 times
+-Save the excel
+-Hit publish 1 times
+
+Shit throws error when you try to save a topic with access to sharepoint as knowledge source without enabling authentication for the agent.
 
 Try to get the file using the sharepoint connector (does it update faster?)
 Make it update and reflect changes on answers
@@ -251,6 +250,16 @@ Eliminate references
 ------------------------------------------------------------------------------------
 
 3. Post on whatsapp. 
+
+
+https://account.microsoft.com/ Loging with the gmail accocunt
+
+https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products#
+
+https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio?msockid=36f3daf860cd6361087fce0761676214
+
+https://signup.microsoft.com/get-started/signup?products=25a8ddb8-34ca-4a93-828d-95a68d02e3a9&mproducts=CFQ7TTC0LH1F:000P&fmproducts=CFQ7TTC0LH1F:000P&culture=en-us&country=us&ali=1
+
 
 4. Get UNIR sharepoint links
 
