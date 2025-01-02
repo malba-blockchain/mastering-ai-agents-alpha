@@ -158,10 +158,10 @@ X Hallucinating
 
 Tests:
 
-A last name with alerts (NOT SHOWING THE ID)
+TRIBALDO PEREZ
+
 DILXON JOSUÉ ANGULO UZCÁTEGUI
 
-A last name without alerts (NOT GIVING THE ID)
 CAMILO TAFOURT VALLECILLA
 
 MANTILLA MARTINEZ
@@ -191,11 +191,6 @@ A non existing ID
 1010213129
 1088543742
 
-Asking for ID Number
-Whats the ID Number of TAFOURT VALLECILLA?
-
-DATABASE NEW NAMES
-
 3. Control de acceso.
 Internamente en la empresa.
 Control a otras personas externas.
@@ -222,21 +217,28 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 -Turn the ID Number type intro number type instead of string
 -Change overview description
 
-------------Compliance Agent V5------------
+------------Compliance Agent V4.3------------
 
 1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
-
-TRIBALDO PEREZ
-
-ARENAS SANTANA
-
-MATERANO RODRIGUEZ
 
 Check saving the excel using gmail external account
 
 Its possible to get it working under 7 minutes.
 -Save the excel
 -Hit publish 1 times
+
+Fix the date format in sharepoint
+
+Do it using one drive storage
+Editar
+https://alumnosunir-my.sharepoint.com/:x:/g/personal/carlosmario_alba102_comunidadunir_net/EZImFbB_xpxGi8UDeCHj-ZMBFhJM9IcL0VGJDU4Fw-4JTQ?e=TonNXf
+
+Ver
+https://alumnosunir-my.sharepoint.com/:x:/g/personal/carlosmario_alba102_comunidadunir_net/EZImFbB_xpxGi8UDeCHj-ZMBgTIA8FnBKXGKzyuOW71ULg?e=Ig065n
+
+https://docs.google.com/spreadsheets/d/169ofxYWZFaB4Zp1JiLiqilMnaysxsM3H/
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQxirfuxleMPKul0PwDFEcaRsc4934nWZ9QQzDFsf8VdVl4jXV8iSCqPa1SNUH9Uw/pubhtml
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQxirfuxleMPKul0PwDFEcaRsc4934nWZ9QQzDFsf8VdVl4jXV8iSCqPa1SNUH9Uw/pubhtml
 
 Shit throws error when you try to save a topic with access to sharepoint as knowledge source without enabling authentication for the agent.
 
@@ -250,7 +252,6 @@ Eliminate references
 ------------------------------------------------------------------------------------
 
 3. Post on whatsapp. 
-
 
 https://account.microsoft.com/ Loging with the gmail accocunt
 
@@ -275,8 +276,11 @@ https://signup.microsoft.com/get-started/signup?products=25a8ddb8-34ca-4a93-828d
 
 2. Get OneDrive links
 
--Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B?e=USFrQB
--View: https://1drv.ms/x/s!AqTjxNY0ObBAjFjDW9jBjAwFTATr?e=duVHSs
+-Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B
+-View: https://1drv.ms/x/s!AqTjxNY0ObBAjFjDW9jBjAwFTATr
+
+-Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B
+-View: https://1drv.ms/x/c/40b03934d6c4e3a4/EXuDKBQEsn5Ao6m0myyy0bMB39NYH67taYDfhxY265t5MQ?e=jt3Xd3
 
 3. Create table copy using powerapps
 
