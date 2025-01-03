@@ -160,9 +160,9 @@ Tests:
 
 TRIBALDO PEREZ
 
-DILXON JOSUÉ ANGULO UZCÁTEGUI
+ANGULO UZCÁTEGUI
 
-CAMILO TAFOURT VALLECILLA
+TAFOURT VALLECILLA
 
 MANTILLA MARTINEZ
 
@@ -221,11 +221,15 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 
 1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
 
-Check saving the excel using gmail external account
-
 Its possible to get it working under 7 minutes.
 -Save the excel
 -Hit publish 1 times
+
+1.2. Test other formats
+
+1.3. Modify the prompt to improve the shearch using Jarvis
+
+1.4. Take the format that worked in the beginning
 
 Fix the date format in sharepoint
 
