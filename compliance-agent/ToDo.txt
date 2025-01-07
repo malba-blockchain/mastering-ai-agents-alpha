@@ -12,32 +12,6 @@ Figure out how to add dynamic data source | Modify access to everyone can view.
 Create demo questions
 
 
-1098771877
-
-15426661
-
-53036320
-
-64568692
----
-
-784778
-
-13508025
-
-80242734
-
-------
-
-1010243105
-
-49725901
-
-1010243104
-
-13659742
-
-
 -----TALKING POINTS-----
 
 https://shorturl.at/hLiQP v1
@@ -55,65 +29,24 @@ https://docs.google.com/document/d/1PLXdQHQuJB9E_N-T6al9X7jctDvV1OD4zng7bCwMhdo/
 
 3. Mejoras base de datos Nacionalidad. Fecha revisión en listas. Alertas.
 
-
 ToDo v2
 
 1. Hacerlo en español.  DONE
 
 -Si aparece registro de alerta decirle que no le pague. DONE
 
-2. Dejar el numero de telefono de helen para que redirija al WA de ella. DONE
+2. Dejar el numero de telefono de comliance para que redirija al WA de ella. DONE
 
 
 -------------------------------------------------------------------
 
-What's the last review date?
-
-What's the oldest review date?
-
-Whats the first record you can find?
-
-How many records does the matriz compliance have?
-
-How many alerts are there in the matriz compliance document?
-
-How many observations are there in the matriz compliance document?
-
-List all the IDs that have a review date from March 2024
-
-Create an email to Maria Fernanda asking to check again all the IDs that have the review date from February 2024, MAKE SURE TO LIST ALL THE IDs that have the review date from February 2024.
-
-Create an email to Maria Fernanda asking to check again all the IDs that have US as country, MAKE SURE TO LIST ALL THE IDs that have US as country.
-
-Show me the details of all the IDs that have observations associated. ALL OF THEM. There are 8 of them, FIND THEM.
-
-List all the IDs that are from the country VE. There are 20 of them. FIND THEM ALL. 20 of them.
-
-Show me the details of all the IDs that are from the country VE. There are 70 of them. FIND THEM ALL. 70 of them. (Actually 70 of them)
-
-
 ------------Compliance Agent V3------------
-
 
 https://community.powerplatform.com/forums/thread/details/?threadid=ae7941a4-9fb7-4b2c-811b-2fb74ebadbd2
 
 1. Ingresar versión actualizada DONE
 
 2. Que no se vea la matríz de referencia DONE
-
-1121879281
-1144051052
-1023900521
-1010243105
-86048170
-91135813
-409589
-52443528
-
-https://tinyurl.com/compliance-agent-v3
-
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV3/canvas?__version__=2&enableFileAttachment=true
-
 
 3. Massive information access restriction. Only 1 search at a time. DONE
 
@@ -131,7 +64,6 @@ Lista los últimos 5 registros que se encuentren en la base de datos
 
 Cuantos registros hay en total en la base de datos?
 
-
 4. Deal with other empty sources 2,3 etc. : cite:2 "Citation-2" : cite:3 "Citation-3" DONE
 
 Substitute(Topic.Var1, ": cite:1 ""Citation-1""", "") ORIGINAL
@@ -141,11 +73,6 @@ Substitute(Topic.Var1, ": cite:1 ""Citation-1""", "")
 Substitute(Substitute(Substitute(Topic.Var1, ": cite:1 ""Citation-1""", ""), ": cite:2 ""Citation-2""", ""), ": cite:3 ""Citation-3""", "")
 
 ------------Compliance Agent V4------------
-
-
-https://tinyurl.com/compliance-agent-v4-1
-
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV4/canvas?__version__=2&enableFileAttachment=true
 
 1. Hacerlo en inglés para evitar falsos positivos.
 
@@ -158,39 +85,6 @@ X Hallucinating
 
 Tests:
 
-TRIBALDO PEREZ
-
-ANGULO UZCÁTEGUI
-
-TAFOURT VALLECILLA
-
-MANTILLA MARTINEZ
-
-ALVAREZ LOZANO
-
-QUIÑONES SOSA
-
-A non existing name
-CARLOS ANTONIO OZIMANDIAS ROMERO
-
-An ID number with alerts
-1152706243
-1121890450
-21234342
-1065375579
-1091202742
-
-An ID number without alerts
-1022325523
-1042968966
-1072716298
-1051823824
-
-A non existing ID
-5006597241
-1010213129
-1088543742
-
 3. Control de acceso.
 Internamente en la empresa.
 Control a otras personas externas.
@@ -199,10 +93,6 @@ Usar con responsabilidad.
 ------------Compliance Agent V4.2------------
 
 Eliminated security concerns. Eliminated hallucinations for a price. DONE
-
-https://tinyurl.com/compliance-agent-v4-2
-
-https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472-a6d40f9eb440/bots/cr10c_complianceAgentV42/canvas?__version__=2&enableFileAttachment=true
 
 1. Create an agent that searches only by last name DONE
 
@@ -219,13 +109,25 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 
 ------------Compliance Agent V4.3------------
 
-https://tinyurl.com/compliance-agent-v4-3
-
 THE PROBLEM SEEMS TO BE THAT THAT CONTENT IS PRIVATE IN THE SHAREPOINT
 
 MAKE IT PUBLIC FULLY FUNCTIONAL - SHARE THE PAYMENT REQUIREMENT TO THE TEAM
 
-1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
+------------------------------------------------------------------------------------
+
+------------Compliance Agent V4.4------------
+
+Same functionalities as v4.3 but now published on whatsapp to enable sharepoint access
+
+FUNCTIONALITY I: Publish it to whatsapp 
+
+FUNCTIONALITY II: Make the database upgradeable.
+
+DEADLINE:
+AGENT WITH WHATSAPP INTEGRATION + UPGRADEABLE DATABASE JAN 15th
+
+
+Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
 
 Its possible to get it working under 7 minutes.
 -Save the excel
@@ -239,16 +141,8 @@ Its possible to get it working under 7 minutes.
 
 Fix the date format in sharepoint
 
-Do it using one drive storage
-Editar
-https://alumnosunir-my.sharepoint.com/:x:/g/personal/carlosmario_alba102_comunidadunir_net/EZImFbB_xpxGi8UDeCHj-ZMBFhJM9IcL0VGJDU4Fw-4JTQ?e=TonNXf
-
-Ver
-https://alumnosunir-my.sharepoint.com/:x:/g/personal/carlosmario_alba102_comunidadunir_net/EZImFbB_xpxGi8UDeCHj-ZMBgTIA8FnBKXGKzyuOW71ULg?e=Ig065n
-
-https://docs.google.com/spreadsheets/d/169ofxYWZFaB4Zp1JiLiqilMnaysxsM3H/
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQxirfuxleMPKul0PwDFEcaRsc4934nWZ9QQzDFsf8VdVl4jXV8iSCqPa1SNUH9Uw/pubhtml
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQxirfuxleMPKul0PwDFEcaRsc4934nWZ9QQzDFsf8VdVl4jXV8iSCqPa1SNUH9Uw/pubhtml
+Alternative folder path
+https://www.youtube.com/watch?v=DxnZcgn6OIU
 
 Shit throws error when you try to save a topic with access to sharepoint as knowledge source without enabling authentication for the agent.
 
@@ -257,46 +151,3 @@ Make it update and reflect changes on answers
 Fix date format
 Add topic logic 
 Eliminate references
-
-
-------------------------------------------------------------------------------------
-
-3. Post on whatsapp. 
-
-4. Get UNIR sharepoint links
-
--Folder
---Edit: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw?e=yHPYgD
---View: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoB5fRQyoYETlHJvZ9mzHCUJQ?e=l17FBi
---Restricted view: https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBYAjGMKx_tSSIUI9sPFnzPA?e=5P6muq
-
--Document
---Edit: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtAB0r0MZAQR3BjKD75xZmZ0bA?e=jZcx8U
---View: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtAB0wlUJMOyTYkLBAhNIV5ADA?e=UwVCX0
---Restricted view: https://alumnosunir.sharepoint.com/:x:/s/RelampagoSite/EbEAufE4AABBjCqdk5mrHtABdIjYTzLTvrDkhcdrZrbGCw?e=hda2zS
-
-2. Get OneDrive links
-
--Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B
--View: https://1drv.ms/x/s!AqTjxNY0ObBAjFjDW9jBjAwFTATr
-
--Edit: https://1drv.ms/x/s!AqTjxNY0ObBAjFgRTvPwkSxkOi6B
--View: https://1drv.ms/x/c/40b03934d6c4e3a4/EXuDKBQEsn5Ao6m0myyy0bMB39NYH67taYDfhxY265t5MQ?e=jt3Xd3
-
-3. Create table copy using powerapps
-
-Compliance Database App
-Person Record
-
-4. Add manually via the copilot studio interface
-
--Folder
--Document
-
-
-https://www.youtube.com/watch?v=DxnZcgn6OIU
-
-
---------------------------------
-
-
