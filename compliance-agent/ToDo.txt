@@ -219,6 +219,12 @@ https://copilotstudio.microsoft.com/environments/Default-899789dc-202f-44b4-8472
 
 ------------Compliance Agent V4.3------------
 
+https://tinyurl.com/compliance-agent-v4-3
+
+THE PROBLEM SEEMS TO BE THAT THAT CONTENT IS PRIVATE IN THE SHAREPOINT
+
+MAKE IT PUBLIC FULLY FUNCTIONAL - SHARE THE PAYMENT REQUIREMENT TO THE TEAM
+
 1. Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 
 
 Its possible to get it working under 7 minutes.
@@ -257,15 +263,6 @@ Eliminate references
 
 3. Post on whatsapp. 
 
-https://account.microsoft.com/ Loging with the gmail accocunt
-
-https://www.microsoft.com/en-us/microsoft-365/business/compare-all-microsoft-365-business-products#
-
-https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio?msockid=36f3daf860cd6361087fce0761676214
-
-https://signup.microsoft.com/get-started/signup?products=25a8ddb8-34ca-4a93-828d-95a68d02e3a9&mproducts=CFQ7TTC0LH1F:000P&fmproducts=CFQ7TTC0LH1F:000P&culture=en-us&country=us&ali=1
-
-
 4. Get UNIR sharepoint links
 
 -Folder
@@ -298,8 +295,6 @@ Person Record
 
 
 https://www.youtube.com/watch?v=DxnZcgn6OIU
-
-https://alumnosunir.sharepoint.com/:f:/s/RelampagoSite/Em19kzxlQYtIk4mbv9OpzpoBkIcq7bOi_05lioZ96ABMYw
 
 
 --------------------------------
