@@ -1,3 +1,43 @@
+------------------------------------------------------------------------------------------------------------
+ATTEMPT #1
+
+https://www.twilio.com/en-us/blog/add-whatsapp-channel-power-virtual-agents-bot-twilio
+
+1. Copilot agent | Agent endpoint and metadata information in the test file
+https://copilotstudio.microsoft.com/
+
+2. Twilio account
+https://console.twilio.com/us1/develop/sms/try-it-out/whatsapp-learn
+
+3. Ngrok
+https://download.ngrok.com/windows?tab=install
+https://dashboard.ngrok.com/get-started/setup/windows
+Download and create account with Ngrok
+
+
+IM HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+ToDo: Add the other topics greetings to the agent and make work the tutorial endpoint
+DONT FORGET RUNNING NGROK
+
+4. Create a Relay Bot with ASP.NET Core Web API
+
+Visual Studio Code - Installed
+C# for Visual Studio Code - Installed
+.NET 7.0 SDK
+
+Repo guide https://github.com/kokkoon/BotConnectorAPI.git
+
+dotnet watch run
+
+cd C:\Users\USER\C-0xKNOWLEDGE\AI Agents Mastery\compliance-agent\BotConnectorAPI
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+ATTEMPT #2
+
 Integrating a Copilot Studio agent with WhatsApp for direct messaging involves several steps. Here’s a detailed step-by-step guide to help you get started:
 Step 1: Set Up WhatsApp Business API
 
@@ -98,3 +138,19 @@ Additional Resources
     ​Copilot Studio Documentation​
 
 By following these steps and utilizing the resources provided, you should be able to integrate your Copilot Studio agent with WhatsApp for direct messaging.
+
+------------------------------------------------------------------------------------------------------------
+
+ATTEMPT #3
+
+https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels
+
+https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-whatsapp-channel
+------------------------------------------------------------------------------------------------------------
+
+ATTEMPT #4
+
+
+------------------------------------------------------------------------------------------------------------
+
+ATTEMPT #5
