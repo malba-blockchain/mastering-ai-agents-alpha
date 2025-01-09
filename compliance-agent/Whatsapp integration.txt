@@ -14,10 +14,10 @@ https://download.ngrok.com/windows?tab=install
 https://dashboard.ngrok.com/get-started/setup/windows
 Download and create account with Ngrok
 
-
 IM HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-ToDo: Add the other topics greetings to the agent and make work the tutorial endpoint
-DONT FORGET RUNNING NGROK
+
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64
+ngrok http http://localhost:8080
 
 4. Create a Relay Bot with ASP.NET Core Web API
 
@@ -27,12 +27,29 @@ C# for Visual Studio Code - Installed
 
 Repo guide https://github.com/kokkoon/BotConnectorAPI.git
 
+cd C:\Users\USER\C-0xKNOWLEDGE\AI Agents Mastery\compliance-agent\BotConnectorAPI
 dotnet watch run
 
-cd C:\Users\USER\C-0xKNOWLEDGE\AI Agents Mastery\compliance-agent\BotConnectorAPI
++573203944414
++14155238886
+Hi
 
+Endpoint path from the Relay Bot documentation  page
+/BotConnector/StartBot
 
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64
+ngrok http 8080
 
+FIX THE NGROK ERROR
+
+https://www.twilio.com/docs/whatsapp/api
+
+ERROR:  authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.
+ERROR:  You can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.
+
+Ngrok error: Is it because of the type of paid account or because of a config error?
+
+https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config
 
 ------------------------------------------------------------------------------------------------------------
 
