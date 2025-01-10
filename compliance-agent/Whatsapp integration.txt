@@ -36,7 +36,7 @@ Hi
 Endpoint path from the Relay Bot documentation  page
 /BotConnector/StartBot
 
-d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http 8080
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http 8080 --region ap
 
 FIX THE NGROK ERROR
 
@@ -57,9 +57,30 @@ Config file C:\Users\USER\AppData\Local/ngrok/ngrok.yml
 
 https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config
 
-https://d608-191-108-3-190.ngrok-free.app/BotConnector/StartBot
+https://0113-191-108-3-190.ngrok-free.app/BotConnector/StartBot
+
+https://ca55-191-108-3-190.ngrok-free.app/BotConnector/StartBot
 
 ngrok start --all
+
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http http://localhost:8080&&ngrok http 8080
+
+join discussion-material
+
+ngrok http 8080 --region us
+
+ngrok http 8080 --region eu
+
+ngrok http 8080 --region ap
+
+-------------ToDo-------------
+
+Buy the 2 agent ngrok plan 34 USD - Better option 18 USD pay as you go
+https://ngrok.com/pricing?tab=development&ref=productbilling
+
+Buy the twilio plan Service conversation - pay as you go 30 USD
+https://www.twilio.com/en-us/whatsapp/pricing
+
 ------------------------------------------------------------------------------------------------------------
 
 ATTEMPT #2
