@@ -14,10 +14,9 @@ https://download.ngrok.com/windows?tab=install
 https://dashboard.ngrok.com/get-started/setup/windows
 Download and create account with Ngrok
 
-IM HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+IM HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
-d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64
-ngrok http http://localhost:8080
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http http://localhost:8080
 
 4. Create a Relay Bot with ASP.NET Core Web API
 
@@ -27,9 +26,9 @@ C# for Visual Studio Code - Installed
 
 Repo guide https://github.com/kokkoon/BotConnectorAPI.git
 
-cd C:\Users\USER\C-0xKNOWLEDGE\AI Agents Mastery\compliance-agent\BotConnectorAPI
-dotnet watch run
+cd C:\Users\USER\C-0xKNOWLEDGE\AI Agents Mastery\compliance-agent\BotConnectorAPI&&dotnet watch run
 
+From
 +573203944414
 +14155238886
 Hi
@@ -37,20 +36,30 @@ Hi
 Endpoint path from the Relay Bot documentation  page
 /BotConnector/StartBot
 
-d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64
-ngrok http 8080
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http 8080
 
 FIX THE NGROK ERROR
 
+Option 1: Follow ChatGPT and AI models tutorials.
+
+Option 2: Pay for it
+
 https://www.twilio.com/docs/whatsapp/api
+
+https://console.twilio.com/us1/develop/sms/try-it-out/whatsapp-learn?frameUrl=%2Fconsole%2Fsms%2Fwhatsapp%2Flearn%3Fx-target-region%3Dus1
 
 ERROR:  authentication failed: Your account is limited to 1 simultaneous ngrok agent sessions.
 ERROR:  You can run multiple simultaneous tunnels from a single agent session by defining the tunnels in your agent configuration file and starting them with the command `ngrok start --all`.
 
 Ngrok error: Is it because of the type of paid account or because of a config error?
 
+Config file C:\Users\USER\AppData\Local/ngrok/ngrok.yml
+
 https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config
 
+https://d608-191-108-3-190.ngrok-free.app/BotConnector/StartBot
+
+ngrok start --all
 ------------------------------------------------------------------------------------------------------------
 
 ATTEMPT #2
