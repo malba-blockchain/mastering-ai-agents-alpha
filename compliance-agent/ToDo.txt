@@ -123,8 +123,13 @@ FUNCTIONALITY I: Publish it to whatsapp
 
 FUNCTIONALITY II: Make the database upgradeable.
 
+-Sharepoint
+-Azure AI vector search
+-Dataverse/powerapps
+
+
 DEADLINE:
-AGENT WITH WHATSAPP INTEGRATION + UPGRADEABLE DATABASE JAN 15th
+
 
 
 Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandolo. Dale acceso a Helen y Mafe. 

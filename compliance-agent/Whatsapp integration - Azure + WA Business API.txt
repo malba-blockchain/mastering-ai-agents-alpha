@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------------------------
+ATTEMPT #1
+
+How to connect a microsoft copilot studio agent with whatsapp, so users can access and chat with the copilot studio agent I created via Whatsapp business API?
+
+microsoft copilot studio agent with whatsapp chat
+
+
+Interested in Connecting Your Custom Copilot to WhatsApp?
+
+We're excited to announce that we're adding WhatsApp as a native channel on Copilot Studio in collaboration with Azure Communication Services (ACS). This means you'll soon be able to connect your custom copilots to your WhatsApp Business phone number with just a few clicks.
+
+What You'll Need:
+
+    WhatsApp Business Account: you need to have a WhatsApp Business account.
+    More details: https://business.whatsapp.com/products/business-platform
+    https://developers.facebook.com/docs/whatsapp/cloud-api/get-started
+
+    Azure Communication Services integrated with WhatsApp Business: your WhatsApp Business account must be connected to an ACS resource.
+    More details: https://learn.microsoft.com/azure/communication-services/quickstarts/advanced-messaging/whatsapp/connect-whatsapp-business-account
+
+No worries if you don't have these set up—we're happy to help you get started!
+If you're interested in deploying your custom copilot to your WhatsApp Business phone number, please fill out this form. We'll reach out to you for the Private Preview.
