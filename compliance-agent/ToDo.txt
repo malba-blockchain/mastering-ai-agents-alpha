@@ -127,19 +127,23 @@ This knowledge source provides information found in the Matriz Compliance
 1.1. Sharepoint
 Matriz Compliance folder
 Anyone -  can edit
+
 RESULT:  There are authentication errors in one or more of these sources.
 RESULT:  No information was found that could help answer this.
 
 Anyone -  can view
+
 RESULT:  There are authentication errors in one or more of these sources.
 RESULT:  No information was found that could help answer this. 
 
 Matriz Compliance direct excel
 Anyone -  can edit
+
 RESULT:  There are authentication errors in one or more of these sources.  
 RESULT:  No information was found that could help answer this. 
 
 Anyone -  can view
+
 RESULT:  There are authentication errors in one or more of these sources.  
 RESULT:  No information was found that could help answer this. 
 
@@ -149,15 +153,18 @@ RESULT: It seems to have solved the authentication error by getting the new acce
 1.2. Using datasource card in the topic called classic data.
 RESULT:  No information was found that could help answer this. 
 
+
 1.3. One drive
 
 Matriz Compliance
 This knowledge source provides information found in the Matriz Compliance
 
 Anyone -  can edit:
+
 RESULT:  No information was found that could help answer this. 
 
 Anyone -  can view:
+
 RESULT:  No information was found that could help answer this. 
 
 1.4. Test other formats HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -165,28 +172,40 @@ RESULT:  No information was found that could help answer this.
 Upload all sources and give it 15 min before testing. It might need time to charge and assimilate.
 
 +Sharepoint Direct PDF
-RESULT:  No information was found that could help answer this. 
+RESULT:  No information was found that could help answer this. Works 1/10 times
 
 +Sharepoint Direct TXT
-
-+OneDrive Direct PDF
+RESULT:  No information was found that could help answer this. Works 1/10 times
 
 +Sharepoint Folder with PDF
+RESULT:  No information was found that could help answer this.
+
++Sharepoint Folder with TXT
+RESULT:  No information was found that could help answer this.
+
++OneDrive Direct PDF
+RESULT:  No information was found that could help answer this.
+
++OneDrive Direct TXT
+RESULT:  No information was found that could help answer this.
 
 +OneDrive Folder with PDF
+RESULT:  No information was found that could help answer this.
 
-
-
- Ask Jarvis about the error.
-
-
++OneDrive Folder with TXT
+RESULT:  No information was found that could help answer this.
 
 
 1.7. Dataverse/powerapps
 
+Find out how to integrate with dataverse
+
+
+
 
 -Azure AI vector search
 
+ Ask Jarvis about the error.
 
 DEADLINE:
 
@@ -219,3 +238,6 @@ Make it update and reflect changes on answers
 Fix date format
 Add topic logic 
 Eliminate references
+
+-----------------------------------------------------------------------------
+Generate a really long and extremely detailed tutorial step by step explaning in absolute detail every singe step and substep associated with this task.
