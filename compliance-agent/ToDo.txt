@@ -12,6 +12,7 @@ Figure out how to add dynamic data source | Modify access to everyone can view.
 Create demo questions
 
 
+
 -----TALKING POINTS-----
 
 https://shorturl.at/hLiQP v1
@@ -196,16 +197,20 @@ RESULT:  No information was found that could help answer this.
 RESULT:  No information was found that could help answer this.
 
 
-1.7. Dataverse/powerapps
 
-Find out how to integrate with dataverse
-
+1.5. Ask all the agents the meta question of the goal that's required to achieve.
 
 
+1.6. Find out how to integrate with dataverse  Dataverse/powerapps
 
--Azure AI vector search
 
- Ask Jarvis about the error.
+Use an existing table to add the data
+
+Create a new table
+
+
+1.8. Azure AI vector search
+
 
 DEADLINE:
 
@@ -240,4 +245,7 @@ Add topic logic
 Eliminate references
 
 -----------------------------------------------------------------------------
+I'm creating tables in microsoft power apps in order to use them as knowledge source for my copilot studio agent.
+I can create them in power apps, however when I try to use them as knowledge source imported from dataverse, they just don't appear. in the list of Available tables. What can I do?
+
 Generate a really long and extremely detailed tutorial step by step explaning in absolute detail every singe step and substep associated with this task.
