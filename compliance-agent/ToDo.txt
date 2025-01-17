@@ -205,6 +205,10 @@ It seems like the problem of this shit is around the permissions to create table
 
 Fix the dataverse environment permission problem.
 
+1.6.1. Add myself to the System Customizer security role
+ Service Writer 
+
+
 https://members.collab365.com/c/microsoft365_forum/help-with-licensing-and-or-permissions-for-power-apps-and-dataverse
 
 https://community.powerplatform.com/forums/thread/details/?threadid=b4bb3e65-f504-4724-a128-c896fed8a3d1
