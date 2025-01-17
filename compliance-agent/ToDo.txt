@@ -199,7 +199,11 @@ RESULT:  No information was found that could help answer this.
 
 1.5. Ask all the agents the meta question of the goal that's required to achieve.
 
-It seems like the problem of this shit is around the permissions to create tables in the default dataverse environmet.
+It seems like the problem of this shit is around the permissions to create tables in the default dataverse environment.
+
+1.6. Find out how to integrate with dataverse  Dataverse/powerapps
+
+Fix the dataverse environment permission problem.
 
 https://members.collab365.com/c/microsoft365_forum/help-with-licensing-and-or-permissions-for-power-apps-and-dataverse
 
@@ -210,7 +214,7 @@ https://www.reddit.com/r/copilotstudio/comments/1hxmih1/copilot_studio_agents_wi
 https://www.youtube.com/watch?v=NjQCYc3dRmA&t=234s
 
 
-1.6. Find out how to integrate with dataverse  Dataverse/powerapps
+
 
 Use an existing table to add the data
 
