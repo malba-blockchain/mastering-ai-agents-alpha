@@ -36,6 +36,8 @@ Hi
 Endpoint path from the Relay Bot documentation  page
 /BotConnector/StartBot
 
+d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http 5157 --region eu
+
 d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http 8080 --region ap
 
 FIX THE NGROK ERROR
@@ -57,9 +59,12 @@ Config file C:\Users\USER\AppData\Local/ngrok/ngrok.yml
 
 https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config
 
-https://0113-191-108-3-190.ngrok-free.app/BotConnector/StartBot
+-----------Testing links-----------
 
-https://ca55-191-108-3-190.ngrok-free.app/BotConnector/StartBot
+Try with the port 5157 in the same region now
+
+https://4ddb-191-111-19-167.ngrok-free.app/BotConnector/StartBot
+
 
 ngrok start --all
 
