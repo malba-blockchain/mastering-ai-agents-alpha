@@ -12,7 +12,6 @@ Figure out how to add dynamic data source | Modify access to everyone can view.
 Create demo questions
 
 
-
 -----TALKING POINTS-----
 
 https://shorturl.at/hLiQP v1
@@ -234,8 +233,6 @@ Poder ingresar para meterle nuevas personas a la matríz, continuar alimentandol
 Its possible to get it working under 7 minutes.
 -Save the excel
 -Hit publish 1 times
-
-
 
 1.3. Modify the prompt to improve the shearch using Jarvis
 
