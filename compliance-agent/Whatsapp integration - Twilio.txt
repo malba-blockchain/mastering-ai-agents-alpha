@@ -67,12 +67,6 @@ Try with the port 5157 in the same region now
 
 https://7637-191-111-19-167.ngrok-free.app/BotConnector/StartBot
 
-https://ca5c-191-111-19-167.ngrok-free.app/BotConnector/StartBot
-
-https://54de-191-111-19-167.ngrok-free.app/BotConnector/StartBot
-
-ngrok start --all
-
 d:&&cd D:\USER\Downloads\ngrok-v3-stable-windows-amd64&&ngrok http http://localhost:8080&&ngrok http 5157
 
 join discussion-material
