@@ -1,0 +1,194 @@
+https://tracker-gastos-tarjeta.onrender.com/
+
+
+Subir PDF
+
+3203944414
+
+24315589
+
+https://malba100.app.n8n.cloud/webhook-test/bb619152-08f6-4af8-b706-149ef2912f9c
+
+Como crear el website de onrender?
+
+OPENAI KEY
+
+
+Eres un asistente especializado en extraer y estructurar datos de extractos de tarjetas de crédito. A partir de un texto sin formato (como el extracto que se muestra a continuación), debes extraer *únicamente las transacciones que representan gastos* (es decir, excluye abonos, pagos, depósitos, reversos u otros movimientos que no sean gastos) y estructurarlas en formato JSON con la siguiente estructura:
+
+[
+  {
+    "fecha": "YYYY-MM-DD", 
+    "descripcion": "Texto de la transacción con formato gramatical correcto. Si el texto está en mayúsculas, normalízalo.",
+    "valor": 00000,
+    "categoria": "Categoría o 'No categorizado'",
+    "banco": "Nombre del banco que emite el extracto",
+    "numero_tarjeta": "Últimos 4 dígitos de la tarjeta (por ejemplo, '1234'). Si no están disponibles, pon 'N/A'"
+  }
+]
+
+Instrucciones específicas:
+1. *Extracción de gastos:* Solo debes incluir transacciones que representen gastos. Omite aquellas que sean abonos, pagos, reintegros, depósitos o reversos (por ejemplo, transacciones que contengan expresiones como "GRACIAS POR SU PAGO", "REINTEGRO", etc.).
+2. *Fecha:* Convierte la fecha de cada transacción al formato "YYYY-MM-DD".
+3. *Descripción:* Normaliza la descripción de cada transacción para que tenga formato gramatical correcto (por ejemplo, si el texto está en mayúsculas, conviértelo a una forma estándar de mayúsculas y minúsculas).
+4. *Valor:* Extrae el valor numérico de la transacción.
+5. *Categoría:* Tu tarea es analizar las descripciones y asignar una categoría a cada transacción de acuerdo con las siguientes categorías generales:
+   - Comida
+   - Entretenimiento
+   - Compras
+   - Transporte
+   - Salud
+   - Hogar
+   - Educación
+   - Servicios
+   - Otros
+
+   Si no puedes determinar la categoría porque no tienes suficiente información, asigna "No categorizado" y especifica que no fue categorizado.
+6. *Banco:* Extrae el nombre del banco, ya que siempre se encuentra en el extracto (no debe retornar "N/A").
+7. *Número de tarjeta:* Extrae los últimos 4 dígitos de la tarjeta. Si no se encuentran, utiliza "N/A".
+8. *Salida:* No agregues información adicional. La salida debe ser un JSON que contenga únicamente un arreglo de objetos con la estructura especificada.
+
+A continuación se muestra el extracto de ejemplo del que debes extraer la información:
+
+"{{ $json.text }}"
+
+Devuelve la respuesta *únicamente* en formato JSON, sin ningún texto explicativo adicional.
+
+--------------------------------------
+
+
+// Verificar si los datos de entrada son válidos
+if (!items || items.length === 0 || !items[0].json) {
+    throw new Error("No se recibieron datos válidos de entrada.");
+}
+
+// Acceder a la respuesta de OpenAI
+let openAiResponse = items[0].json;
+
+if (Array.isArray(openAiResponse)) {
+    openAiResponse = openAiResponse[0];  // Acceder al primer elemento si es un array
+}
+
+// Verificar la estructura esperada
+if (!openAiResponse.message || !openAiResponse.message.content) {
+    throw new Error("Estructura de datos inesperada. No se encontró el contenido esperado.");
+}
+
+// Extraer el contenido del mensaje
+const content = openAiResponse.message.content;
+
+// Buscar el bloque JSON con expresión regular
+const jsonMatch = content.match(/```json\n([\s\S]*?)\n```/);
+
+if (!jsonMatch || jsonMatch.length < 2) {
+    throw new Error("No se encontró el bloque JSON en la respuesta.");
+}
+
+// Convertir el bloque JSON a un objeto JavaScript
+let transactions;
+try {
+    transactions = JSON.parse(jsonMatch[1]);
+} catch (error) {
+    throw new Error("Error al analizar el JSON extraído: " + error.message);
+}
+
+// Formatear las transacciones para n8n, asegurando la presencia de todos los campos requeridos
+return transactions.map(txn => ({
+    json: {
+        fecha: txn.fecha || "",
+        descripcion: txn.descripcion || "",
+        valor: txn.valor || 0,
+        categoria: txn.categoria || "No categorizado",  // Si no hay categoría, se asigna "No categorizado"
+        banco: txn.banco || "",
+        numero_tarjeta: txn.numero_tarjeta ? txn.numero_tarjeta.slice(-4) : ""
+    }
+}));
+
+----------------------------------------------
+
+El siguiente JSON contiene una lista de transacciones de un extracto bancario, con la fecha, descripción y valor.
+
+Tu tarea es analizar estos datos y generar un resumen conciso y claro de los gastos del usuario en un formato de texto listo para enviar por WhatsApp a través de la API de Wassenger. El mensaje debe utilizar saltos de línea \n para garantizar el formato adecuado.
+
+### Estructura del mensaje:
+
+1. Total gastado: $X,XXX,XXX
+2. Categorías con más gasto:\n - Comida: $XXX,XXX\n - Entretenimiento: $XXX,XXX\n - Compras: $XXX,XXX
+3. Categoría con menos gasto: Educación: $XX,XXX
+4. Recomendación: Podrías reducir gastos en entretenimiento y destinar más a ahorro.
+5. Mensaje motivacional: Buen trabajo. Pequeños cambios pueden llevarte a grandes logros financieros.
+
+Asegúrate de devolver *únicamente el mensaje en formato de texto plano*, sin prefijos adicionales ni etiquetas de código.
+
+---
+
+### Datos de las transacciones:
+
+{{ $json.message.content }}
+
+---
+
+### Ejemplo del formato de salida esperado:
+
+Total gastado: $5,000,000\n*Categorías con más gasto:\n - Comida: $2,000,000\n - Entretenimiento: $1,500,000\n - Compras: $800,000\n*Categoría con menos gasto: Educación: $100,000\n*Recomendación:* Considera optimizar tus compras en entretenimiento.\n*Mensaje motivacional:* Sigue así. Estás en camino a un mejor control financiero.
+
+-----------------------------------------------------
+
+https://api.wassenger.com/v1/messages
+
+Token
+
+
+Content-Type
+
+application/json
+------------------------------------------------------
+
+{
+  "phone": "{{ $('Recibe PDF').item.json.body.phone }}",
+  "message": "Acá va un resumen de tu extracto:\n\n{{ $json.message.content }}. Puedes consultar los movimientos en https://docs.google.com/spreadsheets/d/1iGXf-bgrz1IsznW5R6IdsnaQ9VE64xSstvWQgWy1zX8/edit?gid=573396766#gid=573396766",
+  "priority": "normal"
+}
+
+-------------------------------------------------------
+Como lo usas en Mono?
+
+fecha
+descripcion
+valor
+categoria
+banco
+tarjeta
+
+Supabase: Base de datos para conectar con n8n
+
+Se puede hacer un nodo de http para solicitar la info usando deepseek
+
+Como lidias con el problema de ciberseguridad de Cursor?
+
+Que significa OpenAI message an assistant
+
+Cuando no hay un nodo, se envia una http request.
+
+----------------------------------------------------
+
+
+Next step:
+
+Como usar cursor para crear la interface. 
+
+Para que lo usaría una empresa que usa Mono.
+
+
+A los clientes les toca llenar formularios.
+
+Llenar formularios.
+
+La comercial en el CRM. 
+
+Se puede hacer self posting desde el propio servidor para tener los datos de manera segura. Mucho más económico si se hace selfhosting.
+
+Github como repo y onrender.com para hostearlo.
+
+Automatización de leads.
+

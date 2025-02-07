@@ -1,0 +1,16 @@
+**Goal:** Turn the currency conversión service into an automated flow with AI via WhatsApp.
+
+**User Admin:**
+
+1. Admin updates online excel with the most recent conversion rate USD/COP
+
+**User Client:**
+
+1. Client sends via whatsapp the amount USD they want to convert
+
+2. System replies with the amount COP to send back
+
+3. User says yes: system replies with a summary approval message and adds the transaction to history excel
+
+4. User says no: system restarts the flow and waits for next request
+
