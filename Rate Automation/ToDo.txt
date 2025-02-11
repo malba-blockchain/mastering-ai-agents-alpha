@@ -1,0 +1,60 @@
+**Goal:** Turn the currency conversión service into an automated flow with AI via WhatsApp.
+
+**User Admin:**
+
+1. Admin updates online excel with the most recent conversion rate USD/COP
+
+**User Client:**
+
+1. Client sends via whatsapp the amount USD they want to convert
+
+2. System replies with the amount COP to send back
+
+3. User says yes: system replies with a summary approval message and adds the transaction to history excel
+
+4. User says no: system restarts the flow and waits for next request
+
+
+
+Render config: n8n on github
+
+NODE_VERSION
+20.12.0
+
+Wait 5 - 10 min
+Wait for the notification: YOur service is live
+
+
+----------------------------------Flow----------------------------------
+
+Webhook on WA - Receive request
+Automatically send basic answer: "Hey! I'm Relampago Agent. How much do you want to convert from USD to COP?"
+
+Webhook on WA - Receive dollar amount
+Get excel conversion rate data
+Make calculation
+Send proposal: I can offer you 582,400,000 COP at $4,160 per USD. Accept or reject?
+
+
+Accept: 
+Save information on excel
+
+Send message to user on WA
+Done! Your operation has been registered.
+Operation No: 07-02-25-021
+Pair: USD to COP
+Rate: $4,160
+USD: 140,000
+COP: 582,400,000
+
+Reject: "No problem. You can try again in 5 min. We might have a new rate for you."
+
+----------------------------------ToDo----------------------------------
+
+Get webhook on wassenger to receive messages
+
+{
+  "phone": "{{ $json.body.data.fromNumber }}",
+  "message": "Hola! Soy Relampago Agent.\\n\\nCuanto es la cantidad que deseas convertir de USD a COP?",
+  "priority": "normal"
+}

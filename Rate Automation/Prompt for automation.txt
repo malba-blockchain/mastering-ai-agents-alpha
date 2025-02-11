@@ -1,0 +1,16 @@
+I need to create an n8n flow that does the following Exchange Agent Automation proicess:
+
+1. Receive a notification via webhook of amessage sent by an user via whatsapp, using wassenger API
+2. Reply with a fixed defined message to the user the message is: "[Relampago Exchange Agent]\\n\\nHey! How much do you want to convert from USD to COP?\\nEx. 30000"" via wassenger
+3. Get the answer of the whatsapp user via wassenger on how many USD the user wants to convert
+4. Obtain information from an online google sheet "Conversion Rates" about the current conversion rate USD/COP stored in a cell of the google sheet 
+5. Use the information of the conversion rate USD/COP in order to calculate how much COP would the user receive
+6. Send the information of the calculation to the user via whatsapp using the wassenger API. The message would be "I can offer you 120,000,000 COP at a rate of $4,160 COP. Accept or reject?"
+7. Obtain the answer of the user if he accepts or rejects.
+
+9. In case the user accepts, save the following information in an online google sheet: Timestamp (timestamp of the message where the user said approve), Pair (USD/COP in this case), Rate (the conversion rate USD/COP stored in a cell of the google sheet "Conversion Rates"), USD (USD amount the user is converting, COP (COP amount the user is receiving)
+
+In case the user rejects, reply to the user via whatsapp, using the wassenger API: "No problem. You can try again in 5 min. We might have a new rate for you."
+
+
+Create an extremely detailed step by step guide, defining step by step with total detail how to achieve the mentioned flow in the latest n8n interface. Make sure to provide total detail for each node configuration that will be created in n8n, based on the latest n8n version.
