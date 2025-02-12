@@ -51,6 +51,21 @@ Reject: "No problem. You can try again in 5 min. We might have a new rate for yo
 
 ----------------------------------ToDo----------------------------------
 
+Find out how to receive a response message following the initial flow.
+
+Options:
+
+1. Different webhook nodes connected initially
+2. One single webhook and then differentiate between different states
+3. A new webhook in the process flow to get the new messages
+
+Stop relying on wassenger. Get whatsapp business.
+
+Finish adding the relampago whatsapp business phone number to integrate it
+https://www.youtube.com/watch?v=DU2hwUsMBBM
+
+
+
 Get webhook on wassenger to receive messages
 
 {
