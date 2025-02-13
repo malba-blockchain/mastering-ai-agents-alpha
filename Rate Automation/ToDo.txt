@@ -65,7 +65,6 @@ Finish adding the relampago whatsapp business phone number to integrate it
 https://www.youtube.com/watch?v=DU2hwUsMBBM
 
 
-
 Get webhook on wassenger to receive messages
 
 {
