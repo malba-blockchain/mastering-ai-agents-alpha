@@ -50,19 +50,28 @@ Reject: "No problem. You can try again in 5 min. We might have a new rate for yo
 
 ----------------------------------ToDo----------------------------------
 
-Find out how to receive a response message following the initial flow.
+Goal: Send USD amount to obtain conversion rate
+Send ACCEPT or Reject
 
 Options:
 
-1. Different webhook nodes connected initially
+1. Different webhook nodes connected initially: DOESN'T WORK. ONLY ONE FLOW WORKS.
 2. One single webhook and then differentiate between different states
-3. A new webhook in the process flow to get the new messages
+3. A new webhook in the process flow to get the new messages: DOESN'T WORK. O
 
-Stop relying on wassenger. Get whatsapp business.
+4. Use ChatGPT in order to create index (1,2,3) for the type of options required for the user: Send rate quotation request || Approve/Reject quotation request.
 
-Finish adding the relampago whatsapp business phone number to integrate it
+5. Just create rectangular AI node and connect all the parts that seem to make sense https://www.youtube.com/watch?v=LKbAoSebZuk
+
+6. Send AI the workflow and ask how to connect it.
+
+You can use the phone number as conversation ID.
+
+CONTINUE HEREEEEEEEEEE
+The first node in message validation (IF). Verify what type of message is it. Number or string?
+
+
 https://www.youtube.com/watch?v=DU2hwUsMBBM
-
 
 Get webhook on wassenger to receive messages
 
