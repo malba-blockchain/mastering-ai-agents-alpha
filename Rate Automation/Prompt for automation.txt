@@ -13,4 +13,20 @@ I need to create an n8n flow that does the following Exchange Agent Automation p
 In case the user rejects, reply to the user via whatsapp, using the wassenger API: "No problem. You can try again in 5 min. We might have a new rate for you."
 
 
-Create an extremely detailed step by step guide, defining step by step with total detail how to achieve the mentioned flow in the latest n8n interface. Make sure to provide total detail for each node configuration that will be created in n8n, based on the latest n8n version.
+Create an extremely detailed step by step guide, defining step by step with total detail how to achieve the mentioned flow in the latest n8n interface. Make sure to provide total detail for each node configuration that will be created in n8n, based on the latest n8n version
+
+-----------------------------------------------------------------------------
+N8N INTERNAL AI PROMPT
+
+Generate a detailed step by step guide with extreme and absolute detail of every single configuration the wait node that resumes on webhook call in order to receive the answer of a whatsapp user (confirm or reject) of a conversion quote I sent him.
+
+
+
+
+As you can see I initially have a node that receives an USD amount, then I consult the current rate in a google sheets online file
+
+Then I generate the variables for the response to the user, I store them and then I use a whatsapp api node to send the quote with the format: Rate. Amount USD = COP Quote.
+
+But now I need a way to get the answer of the client about my quote. If the user replies "Reject" I send the whatsapp message "No problem. You can try again in 5 min. We might have a new rate for you. "
+
+If the user replies "Accept", I send the whatsapp message "Your operation has been registered succesfully" and then add the quote parameters as a row in a "Conversion History" google sheet
