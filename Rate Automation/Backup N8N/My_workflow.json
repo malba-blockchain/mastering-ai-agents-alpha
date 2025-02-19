@@ -1,0 +1,321 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bb619152-08f6-4af8-b706-149ef2912f9c",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d50b2853-2d05-4ee0-8a28-56a70ae1c6dd",
+      "name": "Webhook",
+      "webhookId": "bb619152-08f6-4af8-b706-149ef2912f9c"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "binaryPropertyName": "file",
+        "options": {
+          "password": "={{ $json.body.password }}"
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "86dcd436-719c-4d7f-9566-e797a6d84dfb",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Eres un asistente especializado en extraer y estructurar datos de extractos de tarjetas de crédito. A partir de un texto sin formato (como el extracto que se muestra a continuación), debes extraer *únicamente las transacciones que representan gastos* (es decir, excluye abonos, pagos, depósitos, reversos u otros movimientos que no sean gastos) y estructurarlas en formato JSON con la siguiente estructura:\n\n[\n  {\n    \"fecha\": \"YYYY-MM-DD\", \n    \"descripcion\": \"Texto de la transacción con formato gramatical correcto. Si el texto está en mayúsculas, normalízalo.\",\n    \"valor\": 00000,\n    \"categoria\": \"Categoría o 'No categorizado'\",\n    \"banco\": \"Nombre del banco que emite el extracto\",\n    \"numero_tarjeta\": \"Últimos 4 dígitos de la tarjeta (por ejemplo, '1234'). Si no están disponibles, pon 'N/A'\"\n  }\n]\n\nInstrucciones específicas:\n1. *Extracción de gastos:* Solo debes incluir transacciones que representen gastos. Omite aquellas que sean abonos, pagos, reintegros, depósitos o reversos (por ejemplo, transacciones que contengan expresiones como \"GRACIAS POR SU PAGO\", \"REINTEGRO\", etc.).\n2. *Fecha:* Convierte la fecha de cada transacción al formato \"YYYY-MM-DD\".\n3. *Descripción:* Normaliza la descripción de cada transacción para que tenga formato gramatical correcto (por ejemplo, si el texto está en mayúsculas, conviértelo a una forma estándar de mayúsculas y minúsculas).\n4. *Valor:* Extrae el valor numérico de la transacción.\n5. *Categoría:* Tu tarea es analizar las descripciones y asignar una categoría a cada transacción de acuerdo con las siguientes categorías generales:\n   - Comida\n   - Entretenimiento\n   - Compras\n   - Transporte\n   - Salud\n   - Hogar\n   - Educación\n   - Servicios\n   - Otros\n\n   Si no puedes determinar la categoría porque no tienes suficiente información, asigna \"No categorizado\" y especifica que no fue categorizado.\n6. *Banco:* Extrae el nombre del banco, ya que siempre se encuentra en el extracto (no debe retornar \"N/A\").\n7. *Número de tarjeta:* Extrae los últimos 4 dígitos de la tarjeta. Si no se encuentran, utiliza \"N/A\".\n8. *Salida:* No agregues información adicional. La salida debe ser un JSON que contenga únicamente un arreglo de objetos con la estructura especificada.\n\nA continuación se muestra el extracto de ejemplo del que debes extraer la información:\n\n\"{{ $json.text }}\"\n\nDevuelve la respuesta *únicamente* en formato JSON, sin ningún texto explicativo adicional."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        440,
+        0
+      ],
+      "id": "b53bf7fa-8150-4f14-b1c7-c2fff19bb580",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ssPdRGDCC3Qkra1I",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Verificar si los datos de entrada son válidos\nif (!items || items.length === 0 || !items[0].json) {\n    throw new Error(\"No se recibieron datos válidos de entrada.\");\n}\n\n// Acceder a la respuesta de OpenAI\nlet openAiResponse = items[0].json;\n\nif (Array.isArray(openAiResponse)) {\n    openAiResponse = openAiResponse[0];  // Acceder al primer elemento si es un array\n}\n\n// Verificar la estructura esperada\nif (!openAiResponse.message || !openAiResponse.message.content) {\n    throw new Error(\"Estructura de datos inesperada. No se encontró el contenido esperado.\");\n}\n\n// Extraer el contenido del mensaje\nconst content = openAiResponse.message.content;\n\n// Buscar el bloque JSON con expresión regular\nconst jsonMatch = content.match(/```json\\n([\\s\\S]*?)\\n```/);\n\nif (!jsonMatch || jsonMatch.length < 2) {\n    throw new Error(\"No se encontró el bloque JSON en la respuesta.\");\n}\n\n// Convertir el bloque JSON a un objeto JavaScript\nlet transactions;\ntry {\n    transactions = JSON.parse(jsonMatch[1]);\n} catch (error) {\n    throw new Error(\"Error al analizar el JSON extraído: \" + error.message);\n}\n\n// Formatear las transacciones para n8n, asegurando la presencia de todos los campos requeridos\nreturn transactions.map(txn => ({\n    json: {\n        fecha: txn.fecha || \"\",\n        descripcion: txn.descripcion || \"\",\n        valor: txn.valor || 0,\n        categoria: txn.categoria || \"No categorizado\",  // Si no hay categoría, se asigna \"No categorizado\"\n        banco: txn.banco || \"\",\n        numero_tarjeta: txn.numero_tarjeta ? txn.numero_tarjeta.slice(-4) : \"\"\n    }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        0
+      ],
+      "id": "8102b3af-a192-4dc7-b858-8f998faad2de",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1II7Em4Zv7dTJcyCSPcfq076mvqBT13RQmM_jUjo46rk/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1II7Em4Zv7dTJcyCSPcfq076mvqBT13RQmM_jUjo46rk/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fecha": "={{ $json.fecha }}",
+            "descripcion": "={{ $json.descripcion }}",
+            "valor": "={{ $json.valor }}",
+            "categoria": "={{ $json.categoria }}",
+            "banco": "={{ $json.banco }}",
+            "tarjeta": "={{ $json.numero_tarjeta }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "valor",
+              "displayName": "valor",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "categoria",
+              "displayName": "categoria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "banco",
+              "displayName": "banco",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "tarjeta",
+              "displayName": "tarjeta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1020,
+        0
+      ],
+      "id": "5e2b1a2a-9396-402b-a36c-0917a73e68d6",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4Bkz0NCnuVhSHCcp",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "=gpt-4o",
+          "mode": "id"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=El siguiente JSON contiene una lista de transacciones de un extracto bancario, con la fecha, descripción y valor.\n\nTu tarea es analizar estos datos y generar un resumen conciso y claro de los gastos del usuario en un formato de texto listo para enviar por WhatsApp a través de la API de Wassenger. El mensaje debe utilizar saltos de línea \\n para garantizar el formato adecuado.\n\n### Estructura del mensaje:\n\n1. Total gastado: $X,XXX,XXX\n2. Categorías con más gasto:\\n - Comida: $XXX,XXX\\n - Entretenimiento: $XXX,XXX\\n - Compras: $XXX,XXX\n3. Categoría con menos gasto: Educación: $XX,XXX\n4. Recomendación: Podrías reducir gastos en entretenimiento y destinar más a ahorro.\n5. Mensaje motivacional: Buen trabajo. Pequeños cambios pueden llevarte a grandes logros financieros.\n\nAsegúrate de devolver *únicamente el mensaje en formato de texto plano*, sin prefijos adicionales ni etiquetas de código.\n\n---\n\n### Datos de las transacciones:\n\n{{ $json.message.content }}\n\n---\n\n### Ejemplo del formato de salida esperado:\n\nTotal gastado: $5,000,000\\n*Categorías con más gasto:\\n - Comida: $2,000,000\\n - Entretenimiento: $1,500,000\\n - Compras: $800,000\\n*Categoría con menos gasto: Educación: $100,000\\n*Recomendación:* Considera optimizar tus compras en entretenimiento.\\n*Mensaje motivacional:* Sigue así. Estás en camino a un mejor control financiero."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        820,
+        200
+      ],
+      "id": "867d2dbe-97f9-4f42-a38c-291615e92f6e",
+      "name": "OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ssPdRGDCC3Qkra1I",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wassenger.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Token",
+              "value": "ae45b2952af0f6603543d51e20a36e39d0d28df0d064134af5547131e479e5e04f935f9b3d7c9d75"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone\": \"{{ $('Webhook').item.json.body.phone }}\",\n  \"message\": \"Acá va un resumen de tu extracto:\\n\\n{{ $json.message.content }}. Puedes consultar los movimientos en https://docs.google.com/spreadsheets/d/1II7Em4Zv7dTJcyCSPcfq076mvqBT13RQmM_jUjo46rk/edit?gid=0#gid=0\",\n  \"priority\": \"normal\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        200
+      ],
+      "id": "dd9a6b7e-7d12-4e20-a22b-03ae950e30f7",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "53ea33b9-2cd2-4c47-acde-eb5ad2ab6adc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f0f9b62e459525d05aecd6128bcedc3115362bef5487f7aec834642dbcecf47f"
+  },
+  "id": "Dnh2Z9Yu2PyfNI1D",
+  "tags": []
+}

@@ -1,0 +1,224 @@
+{
+  "name": "Rate Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "a3fb7a7a-2b13-457f-8a94-5eb3fb1dc0e9",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        0
+      ],
+      "id": "64e45491-f23d-410f-ba93-d526526e0729",
+      "name": "Capture Messages",
+      "webhookId": "a3fb7a7a-2b13-457f-8a94-5eb3fb1dc0e9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4ddff552-3031-4e7e-89f5-bd86ef47e0a0",
+              "name": "body.data.fromNumber",
+              "value": "={{ $json.body.data.fromNumber }}",
+              "type": "string"
+            },
+            {
+              "id": "20219228-3989-45d6-a233-69cf61869ff3",
+              "name": "body.data.body",
+              "value": "={{ $json.body.data.body }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "9ac1cdbc-4941-4fc4-b3ed-c2c8e52220a0",
+      "name": "Extract Message"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wassenger.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Token",
+              "value": "56bb3ddd82e228012289c79d9567b86f635112fe3ae107de9cf72a4cc0f8a3be4e79723938fe6b80"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone\": \"{{ $json.body.data.fromNumber }}\",\n  \"message\": \"[Relampago Exchange Agent]\\\\n\\\\nHey! How much do you want to convert from USD to COP?\\\\nEx. 30000\",\n  \"priority\": \"normal\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        0
+      ],
+      "id": "d9c664fe-1049-4f9b-998e-c21572b36994",
+      "name": "HTTP Request Node"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ab5e040d-6cc0-4410-a157-6add6c03dda7",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        -240
+      ],
+      "id": "12d319d6-ab44-49b1-9d67-00685df36490",
+      "name": "Webhook",
+      "webhookId": "ab5e040d-6cc0-4410-a157-6add6c03dda7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "76707fce-aa07-428d-af23-60f905eaaa74",
+              "name": "body.data.body",
+              "value": "={{ $json.body.data.body }}",
+              "type": "string"
+            },
+            {
+              "id": "e068717f-5b1c-4b40-88fb-0ce199461eec",
+              "name": "body.data.fromNumber",
+              "value": "={{ $json.body.data.fromNumber }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        200,
+        -240
+      ],
+      "id": "0311efa0-c061-4555-a7ab-f7a91ca618a8",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wassenger.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Token",
+              "value": "56bb3ddd82e228012289c79d9567b86f635112fe3ae107de9cf72a4cc0f8a3be4e79723938fe6b80"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone\": \"{{ $json.body.data.fromNumber }}\",\n  \"message\": \"[Relampago Exchange Agent]\\\\n\\\\nI can offer you 120,000,000 COP at a rate of $4,160 COP.\\\\nAccept or reject? \",\n  \"priority\": \"normal\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        -240
+      ],
+      "id": "886ce5c5-44dc-40bc-b89f-f7e8a5b12642",
+      "name": "HTTP Request Node1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Capture Messages": {
+      "main": [
+        [
+          {
+            "node": "Extract Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Message": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request Node": {
+      "main": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request Node1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request Node1": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0913afe6-98a7-419d-81b9-0e53ded08a50",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f0f9b62e459525d05aecd6128bcedc3115362bef5487f7aec834642dbcecf47f"
+  },
+  "id": "GqjduC9YPrMTVwNl",
+  "tags": []
+}

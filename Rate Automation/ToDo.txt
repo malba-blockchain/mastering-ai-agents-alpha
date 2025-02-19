@@ -92,10 +92,13 @@ https://web3master.app.n8n.cloud/webhook-waiting/4
     Add a Wait Node:
         Drag and drop a Wait node into your workflow after the "Chat Memory Manager Quoting" node.
 
-CONTINUE HEREEEE: The POST request works on postman. Now connect the webhook with the Whatsapp API
-This works. C:\Users\USER>curl -X POST "https://web3master.app.n8n.cloud/webhook-test/bf95bda7-6789-4d6e-8df9-c77ea9d419b4" \     -H "WEBHOOK_VERIFY_TOKEN: DRIVE"
-{"message":"Workflow was started"}curl: (3) URL rejected: Bad hostname
-https://developers.facebook.com/docs/graph-api/webhooks/getting-started/#mtls-for-webhooks
+CONTINUE HEREEEE: 
+
+The webhook seems to work in the Remix editor. Gotta continue the instructions here.
+
+https://developers.facebook.com/docs/whatsapp/sample-app-endpoints
+
+PERHAPS THAT'S NOT THE WAY TO DEAL WITH NEW WHATSAPP MESSASGES. Will follow the tutorial of other n8n implementations and see.
 
     Configure the Wait Node:
         Resume On: Select On Webhook Call. This setting allows the workflow to pause and wait for an HTTP call to resume.
