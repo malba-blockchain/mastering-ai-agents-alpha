@@ -94,9 +94,13 @@ https://web3master.app.n8n.cloud/webhook-waiting/4
 
 CONTINUE HEREEEE: 
 
-The webhook seems to work in the Remix editor. Gotta continue the instructions here.
+Now that I got the webhook working, I gotta figure out how to connect the actual WA messages received with the flow.
 
 https://developers.facebook.com/docs/whatsapp/sample-app-endpoints
+
+https://www.youtube.com/watch?v=zi4JtPEEMa8
+
+Webhook URL https://web3master.app.n8n.cloud/webhook-test/webhook
 
 PERHAPS THAT'S NOT THE WAY TO DEAL WITH NEW WHATSAPP MESSASGES. Will follow the tutorial of other n8n implementations and see.
 
