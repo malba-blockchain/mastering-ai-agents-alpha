@@ -23,7 +23,6 @@ NODE_VERSION
 Wait 5 - 10 min
 Wait for the notification: YOur service is live
 
-
 ----------------------------------Flow----------------------------------
 
 Webhook on WA - Receive request
