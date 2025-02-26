@@ -1,0 +1,842 @@
+{
+  "name": "Rate Automation v4",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "545590858641488",
+        "recipientPhoneNumber": "={{ $('Trigger chat').item.json.messages[0].from }}",
+        "textBody": "=Rate: {{ $('Generate variables').item.json.Rate }}\nUSD {{ $('Generate variables').item.json.Amount }} = COP {{ $('Generate variables').item.json.Quote }}\n\n_Quote valid only for 2 minutes_\nAccept? (yes or no)\n",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        480,
+        -220
+      ],
+      "id": "b73f456e-65b1-49c5-a44a-050165fada0d",
+      "name": "WhatsApp Business Cloud1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "4twhE5Ny2ZjXyw6K",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ]
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        180
+      ],
+      "id": "2ab75066-9cf9-48fa-8807-a560c1626407",
+      "name": "Trigger chat",
+      "webhookId": "e4fac028-e9fa-4cb9-8164-7613e1a57bc0",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "zk1scr1R3lNcPMBX",
+          "name": "WhatsApp OAuth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0f1514e2-21cb-4b84-8bd2-dfb23f52c6cd",
+              "leftValue": "={{ parseInt($json.messages[0].text.body) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -800,
+        200
+      ],
+      "id": "bc4c53d2-162a-49a9-b68f-425a6ed1fefa",
+      "name": "Quote or Confirmation"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1YQbNUy1gYRNzLLjMIrunPdh8i_lf4bgY6ErPT76g4Yo",
+          "mode": "list",
+          "cachedResultName": "Conversion rates",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1YQbNUy1gYRNzLLjMIrunPdh8i_lf4bgY6ErPT76g4Yo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Rates",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1YQbNUy1gYRNzLLjMIrunPdh8i_lf4bgY6ErPT76g4Yo/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -400,
+        -20
+      ],
+      "id": "3f7ef71d-3b20-4188-9c5d-2f789ec94422",
+      "name": "Google Sheets - Get current rate",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "diiSahWkaCcSIdxf",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fcbac122-3fb2-4f30-8cfd-68c6cdf514fc",
+              "leftValue": "={{ $json[\"USD/COP\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -140,
+        -20
+      ],
+      "id": "61b45bbc-890a-4887-81d7-6060715b5df1",
+      "name": "Validate rate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1f6bfd5-d0ee-4ff5-85c0-37910dd0159c",
+              "name": "sessionId",
+              "value": "={{ $('Trigger chat').first().json.contacts[0].wa_id }}",
+              "type": "string"
+            },
+            {
+              "id": "f2c9a450-f41c-4649-be44-16aa6eff4e04",
+              "name": "Timestamp",
+              "value": "={{new Date( $('Trigger chat').item.json.messages[0].timestamp* 1000 - 5 * 3600000).toISOString().replace(\"T\", \" \").slice(0, 19)}}",
+              "type": "string"
+            },
+            {
+              "id": "56ab7d3a-6aab-4350-bff0-0f3a2dc8dfb2",
+              "name": "Amount",
+              "value": "={{ parseInt($('Trigger chat').first().json.messages[0].text.body).toLocaleString(\"es-CO\") }}",
+              "type": "string"
+            },
+            {
+              "id": "e0e74de4-7276-4d6a-bcd6-da7d79504913",
+              "name": "Rate",
+              "value": "={{ $json['USD/COP'] }}",
+              "type": "string"
+            },
+            {
+              "id": "aed52efe-ad14-4f62-af40-f7f129e0d57b",
+              "name": "Quote",
+              "value": "={{ ($('Trigger chat').first().json.messages[0].text.body * $('Google Sheets - Get current rate').first().json['USD/COP'] ).toLocaleString(\"es-CO\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        180,
+        -40
+      ],
+      "id": "33c203f0-fa0f-4e7b-84d2-37268f475938",
+      "name": "Generate variables"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1cIGzC5-9lVeLKkrl-ba7fzkOrFu3l5p_CUDNquEVtsw",
+          "mode": "list",
+          "cachedResultName": "Conversion History",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cIGzC5-9lVeLKkrl-ba7fzkOrFu3l5p_CUDNquEVtsw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 720420645,
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cIGzC5-9lVeLKkrl-ba7fzkOrFu3l5p_CUDNquEVtsw/edit#gid=720420645"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "SESSION ID": "={{ $('Regenerate variables').item.json.SessionID }}",
+            "RATE": "={{ $('Regenerate variables').item.json.Rate }}",
+            "AMOUNT ORIGIN": "={{ $('Regenerate variables').item.json.Amount }}",
+            "AMOUNT DESTINY": "={{ $('Regenerate variables').item.json.Quote }}",
+            "TIMESTAMP": "={{ $('Regenerate variables').item.json.Timestamp }}",
+            "STATUS": "={{ $json.Status }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "SESSION ID",
+              "displayName": "SESSION ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIMESTAMP",
+              "displayName": "TIMESTAMP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RATE",
+              "displayName": "RATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "AMOUNT ORIGIN",
+              "displayName": "AMOUNT ORIGIN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "AMOUNT DESTINY",
+              "displayName": "AMOUNT DESTINY",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "STATUS",
+              "displayName": "STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1600,
+        240
+      ],
+      "id": "955ee712-1fec-422c-9d02-3ccabee5100b",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "diiSahWkaCcSIdxf",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e74ab81a-4a9e-4954-906e-2e69fe4d000b",
+              "leftValue": "={{ $json.query['hub.mode'] }}",
+              "rightValue": "subscribe",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "eaa3738f-fe14-46d4-aa64-f10b1ff23d06",
+              "leftValue": "={{ $json.query['hub.verify_token'] }}",
+              "rightValue": "TEST",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "df9d460e-0dc4-4e51-a4f5-c23c005552ab",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        -200
+      ],
+      "id": "b91573a7-07f5-4663-a9b9-398d064d6ffe",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "98ac391e-1382-49b0-90d6-0b6059756206",
+              "name": "challenge",
+              "value": "={{$json[\"query\"][\"hub.challenge\"]}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2000,
+        -220
+      ],
+      "id": "1e3e50aa-de1d-4b58-9344-caa6603f82ed",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.challenge }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/plain"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2320,
+        -220
+      ],
+      "id": "03eb9256-e977-4911-aa3d-8acc5d0e2289",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "path": "54ff3a3e-79c4-4f81-95a4-c099ece68c59",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        -220
+      ],
+      "id": "2bf3da19-c5f6-4052-8ca2-2ad83de2ece5",
+      "name": "Webhook",
+      "webhookId": "54ff3a3e-79c4-4f81-95a4-c099ece68c59"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "messages": {
+          "messageValues": [
+            {
+              "type": "user",
+              "message": "=SessionID:{{ $json.sessionId }}\nTimestamp:{{ $json.Timestamp }}\nAmount:{{ $json.Amount }}\nRate:{{ $json.Rate }}\nQuote:{{ $json.Quote }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        100
+      ],
+      "id": "b46f09fd-b428-4df5-8557-a9e5af9968f2",
+      "name": "Chat Memory Manager Quoting",
+      "alwaysOutputData": true,
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        860,
+        260
+      ],
+      "id": "67cd1de8-3ce4-4d8f-ac7a-d731b0ae0f3d",
+      "name": "Chat Memory Manager Quoting1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Trigger chat').item.json.contacts[0].wa_id }}",
+        "contextWindowLength": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        920,
+        740
+      ],
+      "id": "afa22302-88aa-4d72-afeb-c5671f0dc3ec",
+      "name": "Quoting"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "30616b7c-3ff0-4b36-852a-d1aa696d5903",
+              "name": "SessionID",
+              "value": "={{$json.messages[0].human.match(/SessionID:(\\d+)/)?.[1] || null}}",
+              "type": "string"
+            },
+            {
+              "id": "88a3a903-1057-4e35-95db-c4aa9cc5bb33",
+              "name": "=Timestamp",
+              "value": "={{$json.messages[0].human.match(/Timestamp:([\\d-]+\\s[\\d:]+)/)?.[1] || null}}",
+              "type": "string"
+            },
+            {
+              "id": "c0f61994-a806-4f00-8f1d-c91de36f8586",
+              "name": "Amount",
+              "value": "={{$json.messages[0].human.match(/Amount:([\\d.]+)/)?.[1] || null}}",
+              "type": "string"
+            },
+            {
+              "id": "a2cde7b1-4176-4d37-a368-a8e171dcbeec",
+              "name": "Rate",
+              "value": "={{$json.messages[0].human.match(/Rate:(\\d+)/)?.[1] || null}}",
+              "type": "string"
+            },
+            {
+              "id": "8ec3df93-e7e4-4c6a-9ce1-477179ebd103",
+              "name": "Quote",
+              "value": "={{$json.messages[0].human.match(/Quote:([\\d.]+)/)?.[1] || null}}",
+              "type": "string"
+            },
+            {
+              "id": "df588d8e-5937-4c22-ac47-9c325824403e",
+              "name": "Status",
+              "value": "={{ ($('Trigger chat').item.json.messages[0].text.body || \"\").toLowerCase() === \"yes\" ? \"Accepted\" : \"Rejected\" }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        240
+      ],
+      "id": "0e4b2a72-f56c-4ba0-bad5-6972666141d8",
+      "name": "Regenerate variables"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "545590858641488",
+        "recipientPhoneNumber": "={{ $('Trigger chat').item.json.messages[0].from }}",
+        "textBody": "=✅Your operation has been added successfully.\n\nTime: {{ $('Regenerate variables').item.json.Timestamp }}\nPair: USD to COP\nRate: {{ $('Regenerate variables').item.json.Rate }}\nUSD: {{ $('Regenerate variables').item.json.Amount }}\nCOP: {{ $('Regenerate variables').item.json.Quote }}\nClient status: {{ $('Regenerate variables').item.json.Status }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        120
+      ],
+      "id": "5a8c2301-d087-4c10-b1b3-dc6b32132f96",
+      "name": "WhatsApp Business Cloud",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "4twhE5Ny2ZjXyw6K",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f6ed6eba-58ee-43f5-8b69-41bc126d9ba5",
+              "leftValue": "={{ $json.STATUS }}",
+              "rightValue": "Accepted",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1960,
+        240
+      ],
+      "id": "654db02d-66a9-4757-9c4d-4836996e4fd0",
+      "name": "If quote is accepted"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "545590858641488",
+        "recipientPhoneNumber": "={{ $('Trigger chat').item.json.messages[0].from }}",
+        "textBody": "=❌Your operation has been rejected.\n\nTime: {{ $('Regenerate variables').item.json.Timestamp }}\nPair: USD to COP\nRate: {{ $('Regenerate variables').item.json.Rate }}\nUSD: {{ $('Regenerate variables').item.json.Amount }}\nCOP: {{ $('Regenerate variables').item.json.Quote }}\nClient status: {{ $('Regenerate variables').item.json.Status }}\n\n👉_Try again in 5 min to check if we have another offer that works for you_",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        320
+      ],
+      "id": "2e685ed2-baef-4cc7-94fb-d37a41180365",
+      "name": "WhatsApp Business Cloud2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "4twhE5Ny2ZjXyw6K",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "delete",
+        "deleteMode": "all"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryManager",
+      "typeVersion": 1.1,
+      "position": [
+        2960,
+        220
+      ],
+      "id": "558b6970-932c-4d06-8667-d69bb149d45a",
+      "name": "Chat Memory Manager"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "WhatsApp Business Cloud1": {
+      "main": [
+        []
+      ]
+    },
+    "Trigger chat": {
+      "main": [
+        [
+          {
+            "node": "Quote or Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quote or Confirmation": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Get current rate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Chat Memory Manager Quoting1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Get current rate": {
+      "main": [
+        [
+          {
+            "node": "Validate rate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate rate": {
+      "main": [
+        [
+          {
+            "node": "Generate variables",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Generate variables": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager Quoting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat Memory Manager Quoting": {
+      "main": [
+        []
+      ]
+    },
+    "Chat Memory Manager Quoting1": {
+      "main": [
+        [
+          {
+            "node": "Regenerate variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quoting": {
+      "ai_memory": [
+        [
+          {
+            "node": "Chat Memory Manager Quoting",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager Quoting1",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Memory Manager",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Regenerate variables": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If quote is accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If quote is accepted": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Business Cloud",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp Business Cloud2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Business Cloud2": {
+      "main": [
+        [
+          {
+            "node": "Chat Memory Manager",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b88fce45-a301-45a6-8290-2bac7bfdcc6f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "71055d08b78f69f24331f721755ab6e21d1ea9f6a91d3bd7a2804f9863a0f27a"
+  },
+  "id": "p6WTQQQ9kUcKB2UG",
+  "tags": []
+}
