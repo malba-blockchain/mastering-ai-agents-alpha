@@ -1,0 +1,34 @@
+-------------------DONE-------------------
+
+Initialize the agent DONE
+Gather books DONE
+Get top 20 videos and extract their script https://notegpt.io/youtube-video-summarizer
+
+Upload knowledge base DONE
+Generate agent context DONE
+Generate my context and goal DONE
+Ask for a plan DONE
+
+
+-------------------ToDo-------------------
+
+
+To find funds that could be interested in your services or skills, start by identifying your target market and the specific value you can provide. Here’s a step-by-step approach:
+
+    Define Your Niche: Determine the specific industry or sector where your skills are most applicable. This could be service, education, training, consulting, brick and mortar, or niche licensing companies ​
+
+​.
+
+Research Potential Funds: Look for funds that invest in your niche. Use online databases, industry reports, and networking events to identify these funds. Websites like Crunchbase, AngelList, and LinkedIn can be valuable resources.
+
+Create a Compelling Offer: Develop a Grand Slam Offer that clearly articulates the unique value you bring. Make sure it includes a specific goal, a time interval for achieving results, and a container word that denotes a comprehensive system or program ​
+
+    ​.
+
+    Network and Reach Out: Attend industry events, join relevant online communities, and connect with fund managers on LinkedIn. Personalize your outreach by highlighting how your skills align with their investment goals.
+
+    Leverage Content Marketing: Share your expertise through blogs, podcasts, and social media. This will help you build credibility and attract the attention of potential investors.
+
+    Use Testimonials and Case Studies: Showcase your past successes to demonstrate the impact of your services. This can help build trust and make your offer more compelling.
+
+By following these steps, you can effectively identify and connect with funds that are likely to be interested in your services.
